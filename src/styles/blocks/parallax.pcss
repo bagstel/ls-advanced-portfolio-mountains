@@ -1,0 +1,25 @@
+/* Parallax
+============================================================================================ */
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__layout {
+    min-width: 1800px;
+    height: 100%;
+    @include desktopHd {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+}

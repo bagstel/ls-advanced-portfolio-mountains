@@ -1,7 +1,15 @@
 include ./mixins.pug
+include ./blocks/menu
+include ./blocks/socials
+include ./blocks/burger
+include ./blocks/parallax
+include ./blocks/user-info
+include ./blocks/scroll
+include ./blocks/about-user
+include ./blocks/triangles
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -9,7 +17,29 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      <!--================ Header =================-->
+      header.header
+        .container.header__container
+          .header__logo: .logo ва
+          .header__menu: +menu('header')
+          .header__socials_and_burger
+            .header__socials: +socials
+            .header__burger: +burger
+      <!--================ Welcome area =================-->
+      .welcome
+        +parallax
+        <!--================ Hero section =================-->
+        section.fullscreen-section.hero
+          .container.hero__container
+            .hero__content: +user_info
+            .hero__scroll: +scroll
+        <!--================ About =================-->
+        section.about
+          .about__container
+            .about__user-info: +about_user
+            .about__user-greeting
+              h4.about__prolog Привет, меня зовут
+              h2.about__title Владимир Астаханов
+              .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      +triangles

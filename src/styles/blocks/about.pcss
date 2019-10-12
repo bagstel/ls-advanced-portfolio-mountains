@@ -1,0 +1,60 @@
+/* About section
+============================================================================================ */
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 0;
+
+  &__container {
+    display: flex;
+    line-height: 30px;
+    margin: 0 auto;
+    max-width: 965px;
+    width: 95%;
+  }
+
+  &__user-info {
+    margin-right: 89px;
+  }
+
+  &__user-greeting {
+    font-weight: 600;
+  }
+
+  &__prolog {
+    color: rgba($links-color, .5);
+    margin-bottom: 13px;
+    font-weight: 600;
+  }
+
+  &__title {
+    color: #464d62;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 28px;
+  }
+
+  &__text {
+    color: rgba($links-color, .5);
+    margin-bottom: 92px;
+  }
+
+  &__ps {
+    position: relative;
+    color: rgba($links-color, .5);
+    font-style: italic;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: url("~images/content/star.png");
+      width: 22px;
+      height: 22px;
+      top: 5px;
+      left: -53px;
+    }
+  }
+}

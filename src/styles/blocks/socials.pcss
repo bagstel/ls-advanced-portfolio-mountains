@@ -1,0 +1,44 @@
+/* Socials
+============================================================================================ */
+.socials {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &:hover {
+      .socials__icon {
+        fill: $links-active;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    fill: #414b63;
+    height: 25px;
+
+    &--insta {
+      width: 25px;
+    }
+
+    &--vk {
+      width: 31px;
+    }
+
+    &--github {
+      width: 27px;
+    }
+  }
+}
