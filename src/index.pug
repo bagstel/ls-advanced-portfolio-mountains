@@ -7,6 +7,8 @@ include ./blocks/user-info
 include ./blocks/scroll
 include ./blocks/about-user
 include ./blocks/triangles
+include ./blocks/skills
+include ./blocks/skill
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -30,7 +32,7 @@ html(lang="ru")
         +parallax
         <!--================ Hero section =================-->
         section.fullscreen-section.hero
-          .container.hero__container
+          .container
             .hero__content: +user_info
             .hero__scroll: +scroll
         <!--================ About =================-->
@@ -38,8 +40,23 @@ html(lang="ru")
           .about__container
             .about__user-info: +about_user
             .about__user-greeting
-              h4.about__prolog Привет, меня зовут
-              h2.about__title Владимир Астаханов
+              h2.about__prolog Привет, меня зовут
+              .title.about__title  Владимир Астаханов
               .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
               .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      <!--================ Triangles =================-->
       +triangles
+      <!--================ Values =================-->
+      .values
+        .container.values__container
+          .values__content
+            .values__header
+              h2.title.values__title Чем я могу быть полезен вам
+              p.values__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .values__skills: +skills
+
+    svg(style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false")
+      linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+        stop(offset="0%" stop-color='#4a00ed')
+        stop(offset="100%" stop-color='#9300e8')
+

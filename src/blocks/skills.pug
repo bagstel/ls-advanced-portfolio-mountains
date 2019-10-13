@@ -1,0 +1,13 @@
+-
+  var skills = [
+      ['Front-end', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js'], [25, 15, 75, 25]],
+      ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack'], [15, 25, 50, 40]],
+  ]
+
+mixin skills()
+  .skills
+    each group in skills
+      .skills__title= group[0]
+      ul.skills__list
+        each skill, index in group[1]
+          li.skills__item: +skill(group[2][index], skill)
