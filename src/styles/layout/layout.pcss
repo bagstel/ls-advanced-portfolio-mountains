@@ -3,23 +3,27 @@
 .welcome {
   position: relative;
   width: 100%;
-  height: 98.6112vw;
+  min-height: 1775px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  @include desktopHd {
-    min-height: 1775px;
-  }
 }
 
 /* Header
 ============================================================================================ */
 .header {
   position: absolute;
-  top: 0;
+  top: 21px;
   z-index: 10;
   width: 100%;
-  padding-top: 60px;
+  transition: background-color .4s ease-in;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  }
 
   &__container {
     display: flex;
@@ -33,7 +37,6 @@
 
   &__menu {
     margin: 0 20px;
-
   }
 
   &__socials_and_burger {
@@ -100,7 +103,6 @@
     width: 66%;
     display: flex;
     flex-direction: column;
-    //align-items: flex-end;
   }
 
   &__header {
@@ -113,8 +115,8 @@
     font-weight: 600;
     line-height: 30px;
   }
+
   &__skills {
-    //align-self: flex-end;
     margin-left: 116px;
   }
 }

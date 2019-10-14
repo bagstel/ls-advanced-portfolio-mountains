@@ -12,11 +12,10 @@ mixin menu(mod)
   <!-- Menu -->
   if (mod === 'header')
     nav.menu
-      .menu
-        ul.menu__list
-          each item in menu
-            li.menu__item
-              a(href= item.href).menu__link= item.text
+      ul.menu__list
+        each item in menu
+          li.menu__item
+            a(href= item.href).menu__link= item.text
   else
     .menu
       ul.menu__list

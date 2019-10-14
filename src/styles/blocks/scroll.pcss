@@ -8,6 +8,14 @@
   color: $links-color;
   text-decoration: none;
 
+  &:hover {
+    .scroll-down__text,
+    .scroll-down__icon {
+      color: $links-active;
+      fill: $links-active;
+    }
+  }
+
   &__text {
     display: flex;
     color: inherit;
@@ -16,6 +24,7 @@
     line-height: 30px;
     margin-right: 9px;
     margin-left: -5px;
+    transition: all .4s ease-in;
   }
 
   &__icon {
@@ -26,5 +35,6 @@
     width: 30px;
     height: 30px;
     fill: $links-color;
+    transition: all .4s ease-in;
   }
 }
