@@ -1,7 +1,12 @@
-mixin triangles()
+mixin triangles(mod)
   <!-- Triangles svg -->
-  .triangles
-    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape
-      polygon(points="0,0 0,100 1000,100")
-    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape
-      polygon(points="0,100 1000,100 1000,0")
+  if (mod === 'budda')
+    .triangles.triangles--budda
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape
+        polygon(points="0,0 500,100 1000,0")
+  else
+    .triangles
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape
+        polygon(points="0,0 0,100 1000,100")
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape
+        polygon(points="0,100 1000,100 1000,0")
