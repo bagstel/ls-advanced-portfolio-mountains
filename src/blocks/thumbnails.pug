@@ -1,0 +1,6 @@
+mixin thumbnails
+  .thumbnails
+    ul.thumbnails__list
+      - for(var i = 1; i <= 4; i++)
+        li(class=`thumbnails__item ${i === 1 ? "thumbnails__item--active" : ""}`)
+          +image(`slider/slide_${i}.png`, 'thumbnails__image')

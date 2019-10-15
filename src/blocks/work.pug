@@ -1,0 +1,11 @@
+-
+  var work = {
+    title: 'Сайт школы образования',
+    description: 'Этот парень проходил обучение веб&#8209;разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!'
+  }
+
+mixin work
+  .work
+    h3.subtitle.work__subtitle= work.title
+    p.work__description !{work.description}
+    a(href="#").work__link Посмотреть сайт

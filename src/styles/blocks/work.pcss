@@ -1,0 +1,35 @@
+.work {
+  &__subtitle {
+    margin-bottom: 31px;
+  }
+
+  &__description {
+    color: rgba($links-color, 0.7);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 39px;
+  }
+
+  &__link {
+    display: inline-block;
+    color: #4b6fd7;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: baseline;
+      margin-right: 15px;
+      width: 15px;
+      height: 15px;
+      background: svg-load('link.svg', fill=#4b6fd7, width=100%, height=100%) no-repeat center;
+    }
+  }
+}

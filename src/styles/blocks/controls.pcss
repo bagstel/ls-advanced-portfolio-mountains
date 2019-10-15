@@ -1,0 +1,25 @@
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.controls--works {
+  font-size: 0;
+
+  .controls__item {
+    &:nth-child(1) > .btn {
+      transform: rotate(-90deg);
+    }
+
+    &:nth-child(2) > .btn {
+      transform: rotate(90deg);
+    }
+  }
+}

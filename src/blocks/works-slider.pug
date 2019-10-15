@@ -1,0 +1,11 @@
+mixin works-slider
+  .works-slider
+    .works-slider__fream
+      .works-slider__preview
+        +image('slider/slide_1.png', 'works-slider__image')
+      .works-slider__thumbnails: +thumbnails
+      .works-slider__controls
+        ul.controls.controls--works
+          li.controls__item: +button('works', 'button', 'next', 'arrow-down', true)
+          li.controls__item: +button('works', 'button', 'prev', 'arrow-down')
+      .works-slider__number 4

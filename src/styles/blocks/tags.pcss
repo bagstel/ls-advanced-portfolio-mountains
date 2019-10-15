@@ -1,0 +1,22 @@
+.tags {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    background-color: #f1f4f9;
+    color: rgba($tags-color, .7);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 48px;
+    border-radius: 22px;
+    padding: 0 20px;
+    margin: 0 15px 15px 0;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.thumbnails {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    will-change: transform;
+    transition: transform .3s;
+    height: calc(100px * 4);
+    overflow: hidden;
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    width: 178px;
+    height: 100px;
+    cursor: pointer;
+    transition: filter .5s ease-in-out;
+  }
+
+  &__item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 3px solid transparent;
+    transition: border .5s ease-in-out;
+  }
+
+  &__item:hover:not(&__item--active) {
+    filter: grayscale(100%)
+  }
+
+  &__item--active:after {
+    border-color: #f29400;
+  }
+}

@@ -1,0 +1,32 @@
+.btn {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.btn.btn--works {
+  width: 50px;
+  height: 50px;
+  background-color: #2d3c4e;
+  transition: background-color .3s ease-in-out;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    background-image: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $links-active;
+  }
+
+  &:disabled {
+    &:before {
+      background-image: svg-load('arrow-down.svg', fill=rgba(#fff, .3), width=100%, height=100%);
+    }
+  }
+}
