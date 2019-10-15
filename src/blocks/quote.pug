@@ -1,0 +1,11 @@
+mixin quote(review)
+  .quote
+    .quote__text
+      p !{ review.text }
+    .quote__user
+      .user
+        .user__avatar
+          +image(`content/${review.avatar}`, 'user__avatar-pic')
+        .user__info
+          .user__name #{ review.author }
+          .user__position #{ review.position }

@@ -1,0 +1,20 @@
+-
+  var reviews = [
+    {
+      text: "Этот парень проходил обучение веб&#8209;разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+      author: "Ковальчук Дмитрий",
+      position: "Основатель Loftschool",
+      avatar: 'kovalchuk.jpg'
+    },
+    {
+      text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+      author: "Владимир Сабанцев",
+      position: "Преподаватель",
+      avatar: 'sabantsev.jpg'
+    }
+  ];
+
+mixin reviews-carousel
+  ul.reviews-carousel__list
+    each review in reviews
+      li.reviews-carousel__item: +quote(review)

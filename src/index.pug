@@ -14,6 +14,8 @@ include ./blocks/work
 include ./blocks/tags
 include ./blocks/button
 include ./blocks/thumbnails
+include ./blocks/quote
+include ./blocks/reviews-carousel
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -70,6 +72,22 @@ html(lang="ru")
               .works__tags
                 +tags
               +work
+      <!--================ Triangles =================-->
+      .triangles.triangles--budda
+        svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--budda
+          polygon(points="0,0 500,100 1000,0")
+      <!--================ Triangles =================-->
+      .testimonial
+        section.reviews
+          .container.reviews__container
+            .reviews__header
+              h2.title.reviews__title Что обо мне говорят
+              .reviews__controls
+                ul.controls.controls--reviews
+                  li.controls__item: +button('reviews', 'button', 'next', 'arrow-down', true)
+                  li.controls__item: +button('reviews', 'button', 'prev', 'arrow-down')
+            .reviews__carousel: +reviews-carousel
+
 
     svg(style="width:0; height:0;" aria-hidden="true")
       linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
