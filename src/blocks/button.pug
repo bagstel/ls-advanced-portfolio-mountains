@@ -1,7 +1,7 @@
 mixin button (className, type, text, icon, disabled)
   - var typeName = type ? type : 'button';
     if (disabled)
-      button(type=`${typeName}`, class=`btn btn--${className}`, disabled)= text
+      button(type=`${typeName}`, class=`btn btn--${className}`, disabled) #{text}
     else
-      button(type=`${typeName}`, class=`btn btn--${className}`)= text
+      button(type=`${typeName}`, class=`btn btn--${className}`) #{text}
 

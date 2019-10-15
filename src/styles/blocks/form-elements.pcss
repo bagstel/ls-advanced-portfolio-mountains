@@ -1,0 +1,84 @@
+/* Form's elements
+============================================================================================ */
+.form {
+  color: $links-color;
+
+  &__single-wrapper {
+    position: relative;
+    margin-bottom: 33px;
+    flex-basis: 47.2%;
+    width: 100%;
+  }
+
+  &__label {
+    position: absolute;
+    top: 45px;
+    color: rgba($links-color, .3);
+    font-weight: 600;
+    line-height: 30px;
+    padding-left: 45px;
+    transition: top .3s ease-in;
+  }
+
+  &__textarea-wrapper {
+    .form__label {
+      top: 40px;
+    }
+  }
+
+  &__input-wrapper,
+  &__textarea-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid $links-color;
+    padding: 43px 0 9px;
+  }
+
+  &__textarea-wrapper {
+    align-items: flex-start;
+  }
+
+  &__input,
+  &__textarea {
+    background: transparent;
+    border: 0;
+    color: $links-color;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-left: 15px;
+    order: 1;
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: calc(36px * 2 + 4px);
+    max-height: calc(36px * 10 + 4px);
+  }
+
+  &__input:focus ~ .form__label,
+  &__input:not(:placeholder-shown) ~ .form__label,
+  &__textarea:focus ~ .form__label,
+  &__textarea:not(:placeholder-shown) ~ .form__label {
+    top: 0;
+  }
+
+  &__input:focus ~ .form__icon .form__icon--user,
+  &__input:focus ~ .form__icon .form__icon--envelope,
+  &__textarea:focus ~ .form__icon .form__icon--message {
+    fill: $links-active;
+  }
+
+  &__icon {
+    display: flex;
+
+    &--user,
+    &--envelope,
+    &--message {
+      fill: rgba($links-color, .3);
+      width: 30px;
+      order: 1;
+    }
+  }
+}

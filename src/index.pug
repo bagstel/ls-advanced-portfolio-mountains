@@ -16,6 +16,7 @@ include ./blocks/button
 include ./blocks/thumbnails
 include ./blocks/quote
 include ./blocks/reviews-carousel
+include ./blocks/form-elements
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -76,8 +77,9 @@ html(lang="ru")
       .triangles.triangles--budda
         svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--budda
           polygon(points="0,0 500,100 1000,0")
-      <!--================ Triangles =================-->
+      <!--================ Testimonial =================-->
       .testimonial
+        <!--================ Reviews section =================-->
         section.reviews
           .container.reviews__container
             .reviews__header
@@ -87,9 +89,19 @@ html(lang="ru")
                   li.controls__item: +button('reviews', 'button', 'next', 'arrow-down', true)
                   li.controls__item: +button('reviews', 'button', 'prev', 'arrow-down')
             .reviews__carousel: +reviews-carousel
+        <!--================ Feedback section =================-->
+        section.feedback
+          .container.feedback__container
+            h2.title.feedback__title Связаться со мной
+            form.feedback__form
+              .feedback__double-block-wrapper
+                +input('feedback', 'Введите ваше имя', 'user', 'text', 'name')
+                +input('feedback', 'Введите ваш email', 'envelope', 'email', 'email')
+              +textarea('feedback', 'Сообщение к письму', 'message', 'message')
+              .feedback__button
+                +button('feedback', 'submit', 'Отправить')
 
-
-    svg(style="width:0; height:0;" aria-hidden="true")
+    svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
       linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
         stop(offset="0%" stop-color='#4a00ed')
         stop(offset="100%" stop-color='#9300e8')
