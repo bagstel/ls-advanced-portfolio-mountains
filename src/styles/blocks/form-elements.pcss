@@ -12,17 +12,24 @@
 
   &__label {
     position: absolute;
-    top: 45px;
+    top: 43px;
     color: rgba($links-color, .3);
     font-weight: 600;
-    line-height: 30px;
+    line-height: 36px;
     padding-left: 45px;
     transition: top .3s ease-in;
+    cursor: pointer;
+    
+    height: 38px;
+    width: 100%;
   }
 
   &__textarea-wrapper {
     .form__label {
-      top: 40px;
+      height: calc(36px * 2 + 7px);
+    }
+    .form__textarea:focus ~ .form__label {
+      height: 36px;
     }
   }
 
@@ -55,13 +62,6 @@
     resize: vertical;
     min-height: calc(36px * 2 + 4px);
     max-height: calc(36px * 10 + 4px);
-  }
-
-  &__input:focus ~ .form__label,
-  &__input:not(:placeholder-shown) ~ .form__label,
-  &__textarea:focus ~ .form__label,
-  &__textarea:not(:placeholder-shown) ~ .form__label {
-    top: 0;
   }
 
   &__input:focus ~ .form__icon .form__icon--user,
