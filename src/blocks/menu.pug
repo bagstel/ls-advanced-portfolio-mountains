@@ -9,15 +9,16 @@
   ]
 
 mixin menu(mod)
-  <!-- Menu -->
   if (mod === 'header')
-    nav.menu
+    <!-- Main menu -->
+    nav(class=`menu menu--${mod}`)
       ul.menu__list
         each item in menu
           li.menu__item
             a(href= item.href).menu__link= item.text
   else
-    .menu
+    <!-- Menu -->
+    div(class=`menu menu--${mod}`)
       ul.menu__list
         each item in menu
           li.menu__item

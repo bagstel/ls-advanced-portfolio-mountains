@@ -100,6 +100,23 @@ html(lang="ru")
               +textarea('feedback', 'Сообщение к письму', 'message', 'message')
               .feedback__button
                 +button('feedback', 'submit', 'Отправить')
+        <!--================ Footer section =================-->
+        footer.footer
+          .container.footer__container
+            .footer__copyright-and-author
+              .footer__copyright © 2019
+              .footer__author: +user_info('footer')
+            .footer__navigation-and-content
+              .footer__navigation: +menu('footer')
+              .footer__content
+                .footer__about-and-socials
+                  .footer__about: p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  .footer__socials: +socials('footer')
+                .footer__quote
+                  .footer-quote
+                    .footer-quote__content
+                      p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    .footer-quote__author Martin Golding
 
     svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
       linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")

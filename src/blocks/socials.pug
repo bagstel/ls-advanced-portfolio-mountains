@@ -1,9 +1,9 @@
 -
   var socials = ['insta', 'vk', 'github']
 
-mixin socials()
+mixin socials(mod)
   <!-- Socials links -->
-  .socials
+  div(class=`socials socials--${mod}`)
     ul.socials__list
       each social in socials
         li.socials__item

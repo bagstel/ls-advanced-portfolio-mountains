@@ -1,43 +1,80 @@
 /* Menu
 ============================================================================================ */
 .menu {
-  height: 108PX;
   &__list {
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   &__item {
     width: 125PX;
-    height: 100%;
-    display: flex;
-    justify-content: center;
 
-    &:last-child {
-      margin-right: 0;
-    }
     &:hover,
     &:active {
       .menu__link {
         font-weight: 600;
-        color: $links-active;
-        border-bottom-color: $links-active;
       }
     }
   }
 
   &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
     height: 100%;
     color: $links-color;
     text-decoration: none;
     border-bottom: 3px solid transparent;
     white-space: nowrap;
-    transition: color, border-bottom-color .5s ease-in, font-weight .1s ease-in;
+    transition: color .5s ease-in, font-weight .4s linear;
+  }
+}
+
+.menu.menu--header {
+  height: 108PX;
+
+  .menu {
+    &__list {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__item {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+
+      &--active {
+        .menu__link {
+          font-weight: 600;
+          color: $links-active;
+          border-bottom-color: $links-active;
+        }
+      }
+    }
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+    }
+  }
+}
+
+.menu.menu--footer {
+  .menu {
+    &__list {
+
+    }
+
+    &__item {
+    }
+
+    &__link {
+      color: #fff;
+
+      &:hover {
+        color: $links-hover-footer;
+        border-color: transparent;
+      }
+    }
   }
 }

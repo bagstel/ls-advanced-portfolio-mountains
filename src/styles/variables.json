@@ -2,6 +2,7 @@
   "text-color": "#414c63",
   "links-color": "#464d62",
   "links-active": "#5500f2",
+  "links-hover-footer": "#ff9a00",
   "tags-color": "#2f3642",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
