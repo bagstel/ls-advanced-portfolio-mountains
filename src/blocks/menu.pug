@@ -13,13 +13,13 @@ mixin menu(mod)
     <!-- Main menu -->
     nav(class=`menu menu--${mod}`)
       ul.menu__list
-        each item in menu
+        each item, i in menu
           li.menu__item
-            a(href= item.href).menu__link= item.text
+            a(href= item.href, class=`menu__link ${i === 0 ? 'menu__link--active' : ''}`) #{item.text}
   else
     <!-- Menu -->
     div(class=`menu menu--${mod}`)
       ul.menu__list
         each item in menu
           li.menu__item
-            a(href= item.href).menu__link= item.text
+            a(href= item.href).menu__link #{item.text}
