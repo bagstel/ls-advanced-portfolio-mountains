@@ -95,9 +95,12 @@ html(lang="ru")
             h2.title.feedback__title Связаться со мной
             form.feedback__form
               .feedback__double-block-wrapper
-                +input('feedback', 'Введите ваше имя', 'user', 'text', 'name')
-                +input('feedback', 'Введите ваш email', 'envelope', 'email', 'email')
-              +textarea('feedback', 'Сообщение к письму', 'message', 'message')
+                .feedback__single-wrapper
+                  +input('feedback', 'Введите ваше имя', 'user', 'text', 'name')
+                .feedback__single-wrapper
+                  +input('feedback', 'Введите ваш email', 'envelope', 'email', 'email')
+              .feedback__single-wrapper
+                +textarea('feedback', 'Сообщение к письму', 'message', 'message')
               .feedback__button
                 +button('feedback', 'submit', 'Отправить')
         <!--================ Footer section =================-->

@@ -1,15 +1,13 @@
 mixin input (className, labelText, icon, inpuType, inputName, placeholder)
-  div(class=`form__single-wrapper form__single-wrapper--${className}`)
-    .form__input-wrapper
-      input(type= inpuType, name= inputName, id=`form_${inputName}`, class=`form__input`, placeholder=" ")
-      label(for=`form_${inputName}`).form__label #{labelText}
-      if icon
-        .form__icon: +icon(`${icon}`, `form__icon--${icon}`)
+  .form__input-wrapper
+    input(type= inpuType, name= inputName, id=`form_${inputName}`, class=`form__input`, placeholder=" ", required)
+    label(for=`form_${inputName}`).form__label #{labelText}
+    if icon
+      .form__icon: +icon(`${icon}`, `form__icon--${icon}`)
 
 mixin textarea (className, labelText, icon, inputName, placeholder)
-  div(class=`form__single-wrapper form__single-wrapper--${className}`)
-    .form__textarea-wrapper
-      textarea(name= inputName, id=`form-${inputName}`, class=`form__textarea`, placeholder=" ")
-      label(for=`form-${inputName}` class=`form__label`)= labelText
-      if icon
-        .form__icon: +icon(`${icon}`, `form__icon--${icon}`)
+  .form__textarea-wrapper
+    textarea(name= inputName, id=`form-${inputName}`, class=`form__textarea`, placeholder=" ", required)
+    label(for=`form-${inputName}` class=`form__label`)= labelText
+    if icon
+      .form__icon: +icon(`${icon}`, `form__icon--${icon}`)

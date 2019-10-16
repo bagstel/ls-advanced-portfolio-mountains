@@ -3,13 +3,6 @@
 .form {
   color: $links-color;
 
-  &__single-wrapper {
-    position: relative;
-    margin-bottom: 33px;
-    flex-basis: 47.2%;
-    width: 100%;
-  }
-
   &__label {
     position: absolute;
     top: 43px;
@@ -19,17 +12,11 @@
     padding-left: 45px;
     transition: top .3s ease-in;
     cursor: pointer;
-    
-    height: 38px;
-    width: 100%;
   }
 
   &__textarea-wrapper {
     .form__label {
-      height: calc(36px * 2 + 7px);
-    }
-    .form__textarea:focus ~ .form__label {
-      height: 36px;
+      height: calc(36px * 2 + 2px);
     }
   }
 
@@ -37,8 +24,7 @@
   &__textarea-wrapper {
     display: flex;
     align-items: center;
-    border-bottom: 2px solid $links-color;
-    padding: 43px 0 9px;
+    padding: 43px 0 0;
   }
 
   &__textarea-wrapper {
@@ -54,8 +40,14 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 36px;
-    margin-left: 15px;
+    padding: 0 0 12px 40px;
+    border-bottom: 2px solid $links-color;
     order: 1;
+    cursor: pointer;
+
+    &:focus {
+      cursor: initial;
+    }
   }
 
   &__textarea {
@@ -64,14 +56,9 @@
     max-height: calc(36px * 10 + 4px);
   }
 
-  &__input:focus ~ .form__icon .form__icon--user,
-  &__input:focus ~ .form__icon .form__icon--envelope,
-  &__textarea:focus ~ .form__icon .form__icon--message {
-    fill: $links-active;
-  }
-
   &__icon {
     display: flex;
+    position: absolute;
 
     &--user,
     &--envelope,
@@ -80,5 +67,15 @@
       width: 30px;
       order: 1;
     }
+  }
+
+  &__input:focus,
+  &__input:focus,
+  &__textarea:focus,
+  &__input:focus ~ .form__icon .form__icon--user,
+  &__input:focus ~ .form__icon .form__icon--envelope,
+  &__textarea:focus ~ .form__icon .form__icon--message {
+    fill: $links-active;
+    border-bottom-color: $links-active;
   }
 }
