@@ -2,7 +2,7 @@ include ./mixins.pug
 include ./blocks/menu
 include ./blocks/socials
 include ./blocks/burger
-include ./blocks/parallax
+include blocks/parallax
 include ./blocks/user-info
 include ./blocks/scroll
 include ./blocks/about-user
@@ -36,26 +36,27 @@ html(lang="ru")
             .header__socials: +socials
             .header__burger: +burger
       <!--================ Welcome area =================-->
-      .welcome
-        +parallax
+      .welcome#home
+        +parallax('mountains')
         <!--================ Hero section =================-->
-        section.fullscreen-section.hero
+        .fullscreen-section.hero
           .container
             .hero__content: +user_info('h1')
             .hero__scroll: +scroll
         <!--================ About =================-->
-        section.about
-          .about__container
-            .about__user-info: +about_user
-            .about__user-greeting
-              h2.about__prolog Привет, меня зовут
-              .title.about__title  Владимир Астаханов
-              .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-              .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        section.about__section#about
+          .container.about__container
+            .about
+              .about__user-info: +about_user
+              .about__user-greeting
+                h2.about__prolog Привет, меня зовут
+                .title.about__title  Владимир Астаханов
+                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
       <!--================ Triangles =================-->
       +triangles
       <!--================ Values =================-->
-      .values
+      .values#skills
         .container.values__container
           .values__content
             .values__header
@@ -74,13 +75,11 @@ html(lang="ru")
                 +tags
               +work
       <!--================ Triangles =================-->
-      .triangles.triangles--budda
-        svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--budda
-          polygon(points="0,0 500,100 1000,0")
+      +triangles("budda")
       <!--================ Testimonial =================-->
       .testimonial
         <!--================ Reviews section =================-->
-        section.reviews
+        section.reviews#reviews
           .container.reviews__container
             .reviews__header
               h2.title.reviews__title Что обо мне говорят
@@ -90,7 +89,7 @@ html(lang="ru")
                   li.controls__item: +button('reviews', 'button', 'prev', 'arrow-down')
             .reviews__carousel: +reviews-carousel
         <!--================ Feedback section =================-->
-        section.feedback
+        section.feedback#feedback
           .container.feedback__container
             h2.title.feedback__title Связаться со мной
             form.feedback__form
@@ -103,23 +102,23 @@ html(lang="ru")
                 +textarea('feedback', 'Сообщение к письму', 'message', 'message')
               .feedback__button
                 +button('feedback', 'submit', 'Отправить')
-        <!--================ Footer section =================-->
-        footer.footer
-          .container.footer__container
-            .footer__copyright-and-author
-              .footer__copyright © 2019
-              .footer__author: +user_info('footer')
-            .footer__navigation-and-content
-              .footer__navigation: +menu('footer')
-              .footer__content
-                .footer__about-and-socials
-                  .footer__about: p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                  .footer__socials: +socials('footer')
-                .footer__quote
-                  .footer-quote
-                    .footer-quote__content
-                      p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                    .footer-quote__author Martin Golding
+      <!--================ Footer section =================-->
+      footer.footer
+        .container.footer__container
+          .footer__copyright-and-author
+            .footer__copyright © 2019
+            .footer__author: +user_info('footer')
+          .footer__navigation-and-content
+            .footer__navigation: +menu('footer')
+            .footer__content
+              .footer__about-and-socials
+                .footer__about: p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__socials: +socials('footer')
+              .footer__quote
+                .footer-quote
+                  .footer-quote__content
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .footer-quote__author Martin Golding
 
     svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
       linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")

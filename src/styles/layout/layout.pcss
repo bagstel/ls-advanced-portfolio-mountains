@@ -3,10 +3,14 @@
 .welcome {
   position: relative;
   width: 100%;
-  min-height: 1775px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+ height: 104.727vw;
+//2681px
+  @include desktopHd {
+    min-height: 1775px;
+  }
 }
 
 /* Header
@@ -77,6 +81,25 @@
     left: 0;
     right: 0;
     bottom: 3%;
+  }
+}
+
+/* About section
+============================================================================================ */
+.about {
+  &__section {
+    display: flex;
+    flex: 1;
+    padding: 100px 0;
+  }
+
+  &__container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
   }
 }
 
@@ -157,6 +180,7 @@
 /* testimonial Section
 ============================================================================================ */
 .testimonial {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -175,7 +199,7 @@
   padding: 255px 0 90px;
 
   &__container {
-    //padding-right: 26%;
+  //padding-right: 26%;
   }
 
   &__header {
