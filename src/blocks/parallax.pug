@@ -1,4 +1,10 @@
-mixin parallax()
-  <!--================ Parallax section =================-->
-  .parallax
-    .parallax__layout: +image('bg/bg_welcome.jpg', 'parallax__image')
+-
+  var speed = [0.1, 0.13, 0.16, 0.19, 0.21, 0.24, 0.27];
+
+mixin parallax(parallax)
+  <!--================ Parallax =================-->
+  div(class=`parallax parallax--${parallax}`)
+    - for (var i = 0; i < speed.length; i++)
+      .parallax__layer(data-speed=`${speed[i]}`)
+        +image(`parallax/mountains/${i + 1}.${i === 0 ? 'jpg' : 'png'}`, 'parallax__image')
+    .parallax__layer(data-speed=`${speed[speed.length - 1]}`)

@@ -1,8 +1,28 @@
-import "./styles/main.pcss";
-if (process.env.NODE_ENV === "development") {
-  require("file-loader!./index.pug");
-}
+import './styles/main.pcss';
 
-import "./scripts/header";
-import "./scripts/skills";
-import "./scripts/inputs";
+if (process.env.NODE_ENV === 'development') {
+  require('file-loader!./index.pug');
+}
+import Parallax from './scripts/Parallax';
+
+// создаем и тут же инициализируем параллакс
+new Parallax({
+  // имя параллакс класса, идентификатра или тега.
+  // в случае класса или идентификатор, в начале имени нужно указывать точку или решотку соответственно.
+  el: '.parallax--mountains',
+  // Стартовая позиция праллакса от 0 до 100
+  // 0 - это когда параллак блок только появился при прокрутке,
+  // а 100 - когда параллакс блок достик верхней границы окна браузера
+  startAt: 100,
+  // Винишная позиция паралакса от 0 до 100
+  // 0 - это когда параллак блок прекращает работы достигнув верхней границей верхнюю границу окна
+  // а 100 - это когда параллакс блок прекращает работы достигнув нижней границей верхнюю границу окна
+  stopAt: 100
+}).init();
+
+import './scripts/header';
+import './scripts/skills';
+import './scripts/inputs';
+
+
+
