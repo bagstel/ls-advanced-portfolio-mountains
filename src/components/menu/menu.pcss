@@ -60,11 +60,6 @@
   &--header &__link--active {
     color: $links-active;
     font-weight: 600;
-
-    &:after {
-      content: '';
-      background-color: $links-active;
-    }
   }
 
   &--footer &__link {
@@ -73,5 +68,10 @@
     &:hover {
       color: $links-hover-footer;
     }
+  }
+
+  &--footer &__link--active {
+    color: $links-hover-footer;
+    font-weight: 600;
   }
 }

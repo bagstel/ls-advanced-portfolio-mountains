@@ -32,7 +32,7 @@ export default class {
     const scroll = this.__scrollPosition();
 
     if (scroll.start <= 0 && scroll.stop >= 0) {
-      console.log(scroll.start, scroll.stop);
+      // console.log(scroll.start, scroll.stop);
       this.__moveLayersDependsOnScroll(Math.abs(scroll.start));
     }
   }
