@@ -1,0 +1,11 @@
+script(type="text/x-template")#thumbnails
+  .thumbnails
+    ul.thumbnails__list
+      li(
+          v-for="work in works"
+          :key="work.id"
+          :class="{ 'thumbnails__item--active': work.index === activeWork }"
+          @click="changeSlide"
+          :data-index="work.index"
+        ).thumbnails__item
+        img(:src="work.photo", alt="").thumbnails__image

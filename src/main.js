@@ -1,5 +1,6 @@
 import './styles/main.pcss';
 import Vue from 'vue';
+import xhr from './scripts/xhrRequests';
 
 if (process.env.NODE_ENV === 'development') {
   require('file-loader!./index.pug');
@@ -48,6 +49,21 @@ new Vue({
   el: '.footer__navigation',
   components: {
     vcMenu: Menu
+  }
+});
+
+// Menu
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import WorksSlider from './components/works-slider/works-slider';
+import Tags from './components/tags/tags';
+import Work from './components/work/work';
+
+new Vue({
+  el: '#works',
+  components: {
+    vcWorksSlider: WorksSlider,
+    vcTags: Tags,
+    vcWork: Work
   }
 });
 

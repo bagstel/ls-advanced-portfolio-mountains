@@ -1,0 +1,6 @@
+- var tags = ['HTML', 'CSS', 'Javascript']
+
+script(type="text/x-template")#tags-template
+  .tags
+    ul.tags__list
+      li(v-for="(tag, i) in techs" :key="i").tags__item {{ tag }}
