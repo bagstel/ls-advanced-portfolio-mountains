@@ -8,11 +8,11 @@ include ./blocks/about-user
 include ./blocks/triangles
 include ./blocks/skills
 include ./blocks/skill
-include ./blocks/works-slider
-include ./blocks/work
+//include ./blocks/works-slider
+//include ./blocks/work
 include ./blocks/tags
 include ./blocks/button
-include ./blocks/thumbnails
+//include components/thumbnails/thumbnails
 include ./blocks/quote
 include ./blocks/reviews-carousel
 include ./blocks/form-elements
@@ -84,11 +84,13 @@ html(lang="ru")
           h2.title.works__title Мои работы
           .works__wrapper
             .works__slider
-              +works-slider
+              vc-works-slider
             .works__content
               .works__tags
-                +tags
-              +work
+                vc-tags
+              vc-work
+
+
       <!--================ Triangles =================-->
       +triangles("buddha")
       <!--================ Testimonial =================-->
