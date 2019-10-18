@@ -32,7 +32,7 @@ export default {
       window.addEventListener('scroll', () => {
         this.links.forEach(link  => {
           const top = document.querySelector(link.href).getBoundingClientRect().top;
-          console.log(top);
+
           if ((top - 108 - 10) <= 0) {
             this.activeLink = link.href;
           }

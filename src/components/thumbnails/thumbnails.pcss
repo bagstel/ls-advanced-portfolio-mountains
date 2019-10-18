@@ -24,11 +24,12 @@
     content: '';
     position: absolute;
     top: -3px;
+    left: -3px;
     right: -3px;
     bottom: -3px;
-    left: -3px;
     border: 3px solid transparent;
-    transition: border .5s ease-in-out;
+    transition: border-color .5s ease-in-out;
+    z-index: 1;
   }
 
   &__item:hover:not(&__item--active) {
@@ -37,5 +38,9 @@
 
   &__item--active:after {
     border-color: #f29400;
+  }
+
+  &__image {
+    width: 100%;
   }
 }
