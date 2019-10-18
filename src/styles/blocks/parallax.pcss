@@ -102,80 +102,55 @@
   }
 }
 
-.parallax--budda {
+.parallax--buddha {
+  background: #98c4f3;
+  width: 100%;
+  min-width: 2560PX;
+
   .parallax__layer {
     &:nth-child(1) {
       .parallax__image {
         object-fit: cover;
         height: 100%;
         width: 100%;
-        top: -95px;
       }
     }
 
     &:nth-child(2) {
       .parallax__image {
-        top: 17.2vw;
-        right: 0;
-        @include desktopHd {
-          top: 305px;
-        }
+        top: 843PX;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
 
     &:nth-child(3) {
       .parallax__image {
-        top: 26.8vw;
+        top: 681PX;
         left: 50%;
-        margin-left: 16%;
-        @include desktopHd {
-          top: 480PX;
-        }
+        margin-left: 7.72%;
       }
     }
 
     &:nth-child(4) {
       .parallax__image {
-        top: 29.4vw;
-        @include desktopHd {
-          top: 530px;
-        }
+        top: 860PX;
       }
     }
 
     &:nth-child(5) {
       .parallax__image {
-        top: 36.9vw;
-        left: 0;
-        @include desktopHd {
-          top: 665PX;
-        }
+        top: 947PX;
+        right: 0;
       }
     }
 
     &:nth-child(6) {
       .parallax__image {
-        top: 39.1vw;
-        right: 0;
-        @include desktopHd {
-          top: 700PX;
-        }
+        top: 1298PX;
+        left: 50%;
+        transform: translateX(-62.3%);
       }
     }
-
-    &:nth-child(7) {
-      .parallax__image {
-        bottom: -1050px;
-        left: 0;
-        //display: none;
-      }
-    }
-
-    //&:last-child {
-    //  top: 99%;
-    //  background-image: url("~images/parallax/mountains/crap.jpg");
-    //  background-position: center top;
-    //  background-repeat: repeat-y;
-    //}
   }
 }
