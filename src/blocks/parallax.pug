@@ -1,10 +1,30 @@
 -
-  var speed = [0.1, 0.13, 0.16, 0.19, 0.21, 0.24, 0.27];
+  var
+    mountains = [0.1, 0.13, 0.16, 0.19, 0.22, 0.25, 0.28],
+    buddha = [0.1, 0.13, 0.2, 0.1, 0.1, 0.1]
 
 mixin parallax(parallax)
   <!--================ Parallax =================-->
   div(class=`parallax parallax--${parallax}`)
-    - for (var i = 0; i < speed.length; i++)
-      .parallax__layer(data-speed=`${speed[i]}`)
-        +image(`parallax/mountains/${i + 1}.${i === 0 ? 'jpg' : 'png'}`, 'parallax__image')
-    .parallax__layer(data-speed=`${speed[speed.length - 1]}`)
+    if (parallax === 'buddha')
+      - for (var i = 0; i < buddha.length; i++)
+        -
+          var
+            speed = buddha[i],
+            lastSpeed = buddha[buddha.length - 1],
+            layerIndex = i + 1,
+            ext = i === 0 ? 'jpg' : 'png';
+        .parallax__layer(data-speed=`${speed}`)
+          +image(`parallax/${parallax}/${layerIndex}.${ext}`, 'parallax__image')
+    else
+      - for (var i = 0; i < mountains.length; i++)
+        -
+          var
+            speed = mountains[i],
+            lastSpeed = mountains[mountains.length - 1],
+            layerIndex = i + 1,
+            ext = i === 0 ? 'jpg' : 'png';
+
+        .parallax__layer(data-speed=`${speed}`)
+          +image(`parallax/${parallax}/${layerIndex}.${ext}`, 'parallax__image')
+      .parallax__layer(data-speed=`${lastSpeed}`)
