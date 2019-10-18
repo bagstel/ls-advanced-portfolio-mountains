@@ -20,6 +20,12 @@ new Parallax({
   stopAt: 100
 }).init();
 
+new Parallax({
+  el: '.parallax--buddha',
+  startAt: 0,
+  stopAt: 100
+}).init();
+
 import './scripts/header';
 import './scripts/skills';
 import './scripts/inputs';
