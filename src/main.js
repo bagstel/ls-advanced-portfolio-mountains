@@ -1,8 +1,15 @@
 import './styles/main.pcss';
+import Vue from 'vue';
 
 if (process.env.NODE_ENV === 'development') {
   require('file-loader!./index.pug');
 }
+
+import './scripts/header';
+import './scripts/inputs';
+
+// Parallax
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import Parallax from './scripts/Parallax';
 
 // создаем и тут же инициализируем параллакс
@@ -22,13 +29,26 @@ new Parallax({
 
 new Parallax({
   el: '.parallax--buddha',
-  startAt: 0,
+  startAt: 30,
   stopAt: 100
 }).init();
 
-import './scripts/header';
-import './scripts/skills';
-import './scripts/inputs';
+// Menu
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import Menu from './components/menu/menu';
 
+new Vue({
+  el: '.header__menu',
+  components: {
+    vcMenu: Menu
+  }
+});
+
+new Vue({
+  el: '.footer__navigation',
+  components: {
+    vcMenu: Menu
+  }
+});
 
 

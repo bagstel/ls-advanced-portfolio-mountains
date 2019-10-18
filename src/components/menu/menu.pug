@@ -1,0 +1,9 @@
+script(type="text/x-template")#menu-template
+  nav(:class="getClass")
+    ul.menu__list
+      li(v-for="(link, i) in links" :key="i").menu__item
+        a(
+          :href="link.href",
+          :class="{ 'menu__link--active': getActiveLink === link.href }"
+          v-scroll-to="{ el: link.href, onStart: onStart}"
+        ).menu__link {{ link.text }}
