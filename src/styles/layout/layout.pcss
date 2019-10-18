@@ -26,6 +26,11 @@
     top: 0;
     background-color: #fff;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+
+    .menu--header .menu__link--active::after {
+      content: '';
+      background-color: $links-active;
+    }
   }
 
   &__container {

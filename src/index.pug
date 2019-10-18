@@ -1,8 +1,7 @@
 include ./mixins.pug
-include ./blocks/menu
 include ./blocks/socials
 include ./blocks/burger
-include blocks/parallax
+include ./blocks/parallax
 include ./blocks/user-info
 include ./blocks/scroll
 include ./blocks/about-user
@@ -47,7 +46,7 @@ html(lang="ru")
       header.header
         .container.header__container
           .header__logo: .logo ва
-          .header__menu: +menu('header')
+          .header__menu: vc-menu(modifier="header")
           .header__socials_and_burger
             .header__socials: +socials
             .header__burger: +burger
@@ -126,7 +125,7 @@ html(lang="ru")
             .footer__copyright © 2019
             .footer__author: +user_info('footer')
           .footer__navigation-and-content
-            .footer__navigation: +menu('footer')
+            .footer__navigation: vc-menu(modifier="footer")
             .footer__content
               .footer__about-and-socials
                 .footer__about: p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
@@ -137,7 +136,10 @@ html(lang="ru")
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer-quote__author Martin Golding
 
+      include ./components/entry
+
     svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
       linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
         stop(offset="0%" stop-color='#4a00ed')
         stop(offset="100%" stop-color='#9300e8')
+
