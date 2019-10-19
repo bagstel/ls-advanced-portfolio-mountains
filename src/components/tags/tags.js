@@ -10,7 +10,6 @@ export default {
   mounted() {
     EventBus.$on('work', ({ techs }) => {
       this.techs = techs;
-      console.log(techs);
     });
   }
 }

@@ -1,0 +1,10 @@
+script(type="text/x-template")#quote-template
+  .quote
+    .quote__text
+      p {{ review.text }}
+    .quote__user
+      .user
+        .user__avatar: img(:src="review.photo", alt="").user__avatar-pic
+        .user__info
+          .user__name {{ review.author }}
+          .user__position {{ review.occ }}
