@@ -71,8 +71,6 @@ new Vue({
 // Reviews
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import ReviewsCarousel from './components/reviews-carousel/reviews-carousel';
-// import Tags from './components/tags/tags';
-// import Work from './components/work/work';
 
 new Vue({
   el: '.reviews__container',
@@ -97,8 +95,17 @@ new Vue({
     });
     EventBus.$on('pages', number => {
       this.pages = number;
-      console.log(number);
     });
   }
 });
 
+// Skills
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import Skills from './components/skills/skills';
+
+new Vue({
+  el: '#skills-list',
+  components: {
+    vcSkills: Skills
+  }
+});

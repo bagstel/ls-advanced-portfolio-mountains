@@ -6,8 +6,6 @@ include ./blocks/user-info
 include ./blocks/scroll
 include ./blocks/about-user
 include ./blocks/triangles
-include ./blocks/skills
-include ./blocks/skill
 include ./blocks/button
 include ./blocks/form-elements
 
@@ -55,7 +53,8 @@ html(lang="ru")
             .values__header
               h2.title.values__title Чем я могу быть полезен вам
               p.values__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .values__skills: +skills
+            .values__skills#skills-list
+              vc-skills
       <!--================ Works area =================-->
       section.works#works
         .container.works__container
@@ -119,9 +118,3 @@ html(lang="ru")
                   .footer-quote__author Martin Golding
 
       include ./components/entry
-
-    svg(style="width:0; height:0; position: absolute;" aria-hidden="true")
-      linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-        stop(offset="0%" stop-color='#4a00ed')
-        stop(offset="100%" stop-color='#9300e8')
-
