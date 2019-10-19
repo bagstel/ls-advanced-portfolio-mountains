@@ -1,0 +1,6 @@
+script(type="text/x-template")#skill-template
+  .skill
+    svg(viewBox="0 0 200 200").skill__svg-shape
+      circle(cx="100" cy="100" r="80").skill__svg-circle--position-under
+      circle(cx="100" cy="100" r="80" :style="percent(skill.percent)").skill__svg-circle--position-above
+    .skill__title {{ skill.title }}
