@@ -13,8 +13,14 @@
       avatar: 'sabantsev.jpg'
     }
   ];
+//: +quote(review)
 
-mixin reviews-carousel
-  ul.reviews-carousel__list
-    each review in reviews
-      li.reviews-carousel__item: +quote(review)
+script(type="text/x-template")#reviews-carousel-template
+  carousel(
+      :perPageCustom="[[0, 1], [769, 2]]"
+      :navigationEnabled="true"
+      :paginationEnabled="false"
+      @pageChange="pageChange"
+    ).reviews-carousel__list
+    slide(v-for="review in reviews" :key="review.id").reviews-carousel__item
+      vc-quote(:review="review")
