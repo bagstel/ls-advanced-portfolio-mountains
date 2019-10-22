@@ -13,6 +13,29 @@
     height: 120px;
     fill: currentColor;
   }
+
+  @include desktop {
+    height: 80px;
+    margin-top: -80px;
+    &__shape {
+      height: 80px;
+    }
+  }
+
+  @include tablets {
+    height: 50px;
+    margin-top: -50px;
+    .triangles__shape {
+      height: 50px;
+    }
+  }
+  @include phones {
+    height: 20px;
+    margin-top: -20px;
+    .triangles__shape {
+      height: 20px;
+    }
+  }
 }
 
 .triangles--budda {
@@ -23,5 +46,20 @@
   .triangles__shape {
     height: 90px;
     flex-basis: 100%;
+  }
+
+  @include tablets {
+    height: 40px;
+    margin-bottom: -40px;
+    .triangles__shape {
+      height: 40px;
+    }
+  }
+  @include phones {
+    height: 16px;
+    margin-bottom: -16px;
+    .triangles__shape {
+      height: 16px;
+    }
   }
 }
