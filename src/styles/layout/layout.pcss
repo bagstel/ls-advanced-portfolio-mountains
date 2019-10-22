@@ -242,6 +242,9 @@
 .reviews {
   padding: 255px 0 90px;
   z-index: 1;
+  @include phones {
+    padding-top: 100px;
+  }
 
   &__container {
   }
@@ -250,11 +253,19 @@
     display: flex;
     align-items: center;
     margin-bottom: 90px;
+    @include tablets {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
   }
 
   &__title {
     margin-bottom: 0;
     margin-right: 94px;
+    @include tablets {
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
   }
 }
 
