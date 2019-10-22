@@ -170,6 +170,7 @@
   @include tablets {
     padding-bottom: 100px;
   }
+
   &__container {
   }
 
@@ -231,6 +232,9 @@
   flex-direction: column;
   justify-content: flex-start;
   min-height: 1440PX;
+  @include phones {
+    min-height: 1200PX;
+  }
 
   &__container {
     padding: 150px 0 166px;
@@ -244,6 +248,7 @@
   z-index: 1;
   @include phones {
     padding-top: 100px;
+    padding-bottom: 70px;
   }
 
   &__container {
@@ -274,9 +279,16 @@
 .feedback {
   padding: 95px 0 133px;
   z-index: 1;
+  @include phones {
+    padding-top: 70px;
+    padding-bottom: 100px;
+  }
 
   &__title {
     margin-bottom: 78px;
+    @include tablets {
+      margin-bottom: 10px;
+    }
   }
 
   &__form {
@@ -296,10 +308,17 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    @include phones {
+      flex-direction: column;
+    }
   }
 
   &__button {
     padding-top: 25px;
+    @include tablets {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
