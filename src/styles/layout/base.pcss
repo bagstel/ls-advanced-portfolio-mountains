@@ -1,10 +1,10 @@
 html {
-  @include desktop {
-    font-size: 15px;
-  }
-  @include tablets {
-    font-size: 14px;
-  }
+  //@include desktop {
+  //  font-size: 15px;
+  //}
+  //@include tablets {
+  //  font-size: 14px;
+  //}
 }
 
 body,
@@ -99,6 +99,9 @@ img {
 
 .title {
   font-size: 36px;
+  @include tablets {
+    font-size: 30px;
+  }
 }
 
 .subtitle {
