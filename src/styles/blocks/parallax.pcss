@@ -6,14 +6,12 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  min-width: 1800px;
   height: 100%;
   overflow: hidden;
 
   &__layer {
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
   }
@@ -26,6 +24,8 @@
 }
 
 .parallax--mountains {
+  min-width: 1800px;
+
   .parallax__layer {
     &:nth-child(1) {
       .parallax__image {
@@ -38,63 +38,48 @@
 
     &:nth-child(2) {
       .parallax__image {
-        top: 17.2vw;
+        top: 445PX;
         right: 0;
-        @include desktopHd {
-          top: 305px;
-        }
       }
     }
 
     &:nth-child(3) {
       .parallax__image {
-        top: 26.8vw;
+        top: 685PX;
         left: 50%;
-        margin-left: 16%;
-        @include desktopHd {
-          top: 480PX;
-        }
+        margin-left: 16.4%;
       }
     }
 
     &:nth-child(4) {
       .parallax__image {
-        top: 29.4vw;
-        @include desktopHd {
-          top: 530px;
-        }
+        top: 750PX;
       }
     }
 
     &:nth-child(5) {
       .parallax__image {
-        top: 36.9vw;
+        top: 945PX;
         left: 0;
-        @include desktopHd {
-          top: 665PX;
-        }
       }
     }
 
     &:nth-child(6) {
       .parallax__image {
-        top: 39.1vw;
+        top: 1000PX;
         right: 0;
-        @include desktopHd {
-          top: 700PX;
-        }
       }
     }
 
     &:nth-child(7) {
       .parallax__image {
-        bottom: 0;
-        left: 0;
+        bottom: -780PX;
+        width: 100%;
       }
     }
 
     &:last-child {
-      top: 99%;
+      top: calc(100% + 780px);
       background-image: url("~images/parallax/mountains/crap.jpg");
       background-position: center top;
       background-repeat: repeat-y;
@@ -103,9 +88,8 @@
 }
 
 .parallax--buddha {
-  background: #98c4f3;
-  width: 100%;
-  min-width: 2560PX;
+  min-width: 2560px;
+  background: #fff;
 
   .parallax__layer {
     &:nth-child(1) {
@@ -118,38 +102,38 @@
 
     &:nth-child(2) {
       .parallax__image {
-        top: 843PX;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 100%;
+        top: 560px;
       }
     }
 
     &:nth-child(3) {
       .parallax__image {
-        top: 681PX;
         left: 50%;
-        margin-left: 7.72%;
+        margin-left: 8.12%;
+        top: 400px;
       }
     }
 
     &:nth-child(4) {
       .parallax__image {
-        top: 860PX;
+        width: 100%;
+        top: 580px;
       }
     }
 
     &:nth-child(5) {
       .parallax__image {
-        top: 947PX;
         right: 0;
+        top: 670px;
       }
     }
 
     &:nth-child(6) {
       .parallax__image {
-        top: 1298PX;
         left: 50%;
         transform: translateX(-62.3%);
+        top: 1020px;
       }
     }
   }
