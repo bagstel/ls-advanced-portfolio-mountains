@@ -6,4 +6,5 @@ script(type="text/x-template")#menu-template
           :href="link.href",
           :class="{ 'menu__link--active': getActiveLink === link.href }"
           v-scroll-to="{ el: link.href, onStart: onStart}"
+          :data-text="link.text"
         ).menu__link {{ link.text }}

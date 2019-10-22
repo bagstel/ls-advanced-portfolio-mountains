@@ -1,23 +1,23 @@
 /* Menu
 ============================================================================================ */
 .menu {
-  &--header {
-    height: 108PX;
-  }
-
   &__list {
     height: 100%;
     display: flex;
-  }
-
-  &--header &__list {
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__item {
     position: relative;
-    width: 125PX;
+    margin-right: 60px;
+
+    @include desktopHd {
+      margin-right: 3.333333vw;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &:hover,
     &:active {
@@ -28,7 +28,6 @@
   }
 
   &--header &__item {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,33 +39,74 @@
   }
 
   &__link {
-    color: $links-color;
+    position: relative;
+    color: transparent;
     text-decoration: none;
     white-space: nowrap;
-    transition: color .5s ease-in, font-weight .4s linear;
-  }
-
-  &--header &__link:after {
-    position: absolute;
-    width: 80%;
-    height: 3px;
-    background: transparent;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: background .4s ease-in;
-  }
-
-  &--header &__link--active {
-    color: $links-active;
+    transition: color .3s ease-in, font-weight .4s linear;
     font-weight: 600;
+    line-height: 30px;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      content: attr(data-text);
+      font-weight: 400;
+      transition: color .3s ease-in, font-weight .4s linear;
+    }
+
+    &:hover::after {
+      position: absolute;
+      color: transparent;
+    }
+  }
+
+  &--header &__link {
+    &:after {
+      color: $links-color;
+    }
+
+    &:hover:not(.menu__link--active) {
+      color: $links-color;
+
+      &::after {
+        position: absolute;
+        color: transparent;
+      }
+    }
+
+    &--active {
+      color: $links-active;
+
+      &::after {
+        position: absolute;
+        color: transparent;
+      }
+    }
   }
 
   &--footer &__link {
-    color: #fff;
+    color: transparent;
 
-    &:hover {
-      color: $links-hover-footer;
+    &:after {
+      color: #fff;
+    }
+
+    &:hover:not(.menu__link--active) {
+      color: #fff;
+
+      &::after {
+        position: absolute;
+        color: transparent;
+      }
+    }
+
+    &--active {
+      color: $links-active;
+
+      &::after {
+        color: transparent;
+      }
     }
   }
 
