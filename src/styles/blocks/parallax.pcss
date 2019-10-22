@@ -25,8 +25,19 @@
 
 .parallax--mountains {
   min-width: 1800px;
+  @include tablets {
+    min-width: 768px;
+    background-image: url('~images/bg/bg_mountain_1400.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
 
   .parallax__layer {
+    @include tablets {
+      display: none;
+    }
+    
     &:nth-child(1) {
       .parallax__image {
         object-fit: cover;
@@ -90,8 +101,18 @@
 .parallax--buddha {
   min-width: 2560px;
   background: #fff;
+  @include tablets {
+    min-width: 768px;
+    background-image: url('~images/bg/bg_buddha_1400.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
 
   .parallax__layer {
+    @include tablets {
+      display: none;
+    }
     &:nth-child(1) {
       .parallax__image {
         object-fit: cover;
