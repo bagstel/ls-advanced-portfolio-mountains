@@ -96,6 +96,7 @@ img {
   color: $links-color;
   font-weight: 700;
   line-height: 48px;
+
 }
 
 .title {
@@ -103,8 +104,15 @@ img {
   @include tablets {
     font-size: 30px;
   }
+  @include phones {
+    font-size: 24px;
+  }
 }
 
 .subtitle {
   font-size: 30px;
+  @include phones {
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
