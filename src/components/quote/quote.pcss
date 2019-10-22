@@ -15,6 +15,22 @@
     top: 0;
     left: 0;
     background: svg-load('quote.svg', fill=rgba($text-color, .05)) center center / contain no-repeat;
+
+    @include tablets {
+      width: 30px;
+      height: 26px;
+    }
+  }
+  @include tablets {
+    padding-left: 40px;
+  }
+
+  @include phones {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
   }
 
   &__text {
@@ -22,6 +38,11 @@
     color: rgba($text-color, .5);
     font-weight: 600;
     line-height: 30px;
+
+    @include tablets {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -41,10 +62,17 @@
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 1rem;
+    @include tablets {
+      font-size: 16px;
+    }
   }
 
   &__position {
     color: rgba($text-color, .3);
     font-weight: 600;
+
+    @include tablets {
+      font-size: 14px;
+    }
   }
 }
