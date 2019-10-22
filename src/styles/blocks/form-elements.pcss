@@ -12,6 +12,10 @@
     padding-left: 45px;
     transition: top .3s ease-in;
     cursor: pointer;
+
+    @include tablets {
+      font-size: 14px;
+    }
   }
 
   &__textarea-wrapper {
@@ -44,6 +48,10 @@
     border-bottom: 2px solid $links-color;
     order: 1;
     cursor: pointer;
+    @include tablets {
+      font-size: 14px;
+      line-height: 30px;
+    }
 
     &:focus {
       cursor: initial;
@@ -51,9 +59,11 @@
   }
 
   &__textarea {
-    resize: vertical;
-    min-height: calc(36px * 2 + 4px);
-    max-height: calc(36px * 10 + 4px);
+    resize: none;
+    height: calc(36px * 2 + 4px);
+    @include phones {
+      height: calc(34px * 3 + 4px);
+    }
   }
 
   &__icon {
