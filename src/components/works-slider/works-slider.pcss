@@ -1,6 +1,12 @@
 .works-slider {
   width: 100%;
   padding-right: 160px;
+  @include desktopHd {
+    padding-right: 8.8889vw;
+  }
+  @include tablets {
+    padding-right: 0;
+  }
 
   &__fream {
     position: relative;
@@ -20,16 +26,24 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    @include tablets {
+      display: none;
+    }
   }
 
   &__controls {
     position: absolute;
     bottom: -50px;
     right: 0;
+    @include tablets {
+      bottom: 0;
+    }
   }
 
   &__number {
     position: absolute;
+    //top: 14vw;
+    //top: 200px;
     bottom: 290px;
     right: -164px;
     color: #f0f0f0;
@@ -37,5 +51,19 @@
     font-weight: 800;
     line-height: 48px;
     z-index: -1;
+    @include desktopHd {
+      bottom: 16.1111vw;
+      right: -9.1111vw;
+      font-size: 22.2222vw;
+    }
+    @media screen and (max-width: 1070px) {
+      flex-direction: column;
+      top: 100px;
+      right: -132px;
+      font-size: 300px;
+    }
+    @include tablets {
+      display: none;
+    }
   }
 }
