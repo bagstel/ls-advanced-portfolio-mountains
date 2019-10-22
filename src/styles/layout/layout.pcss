@@ -328,15 +328,33 @@
   background-color: #1b1f22;
   padding: 95px 0 100px;
 
+  @include tablets {
+    padding: 60px 0;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
+    @include phones {
+      flex-direction: column;
+    }
   }
 
   &__copyright-and-author {
     display: flex;
     justify-content: space-between;
     flex-basis: 24.8%;
+    @include desktop {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media screen and (max-width: 900px){
+      flex-basis: 30%;
+      margin-right: 30px;
+    }
+    @include phones {
+      margin-bottom: 40px;
+    }
   }
 
   &__author {
@@ -348,23 +366,37 @@
     font-weight: 600;
     line-height: 54px;
     white-space: nowrap;
+    margin-right: 5%;
+    @include desktop {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__navigation-and-content {
-    flex-basis: 66%;
+    flex-basis: 65%;
+    @include desktop {
+      flex-basis: 65%;
+    }
   }
 
   &__navigation {
     margin-bottom: 56px;
+    @include tablets {
+      margin-bottom: 40px;
+    }
   }
 
   &__content {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 900px){
+      flex-direction: column;
+    }
   }
 
   &__about-and-socials {
-    flex-basis: 36%;
+    flex-basis: 35%;
   }
 
   &__about {
@@ -374,9 +406,16 @@
   &__about p {
     color: rgba(#fff, .3);
     line-height: 30px;
+    @include tablets {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 
   &__socials {
+    @include tablets {
+      margin-bottom: 50px;
+    }
   }
 
   &__quote {
@@ -387,6 +426,10 @@
 .footer-quote {
   line-height: 30px;
   color: #ffffff;
+  @include tablets {
+    font-size: 14px;
+    line-height: 24px;
+  }
 
   &__content {
     color: rgba(#fff, .3);

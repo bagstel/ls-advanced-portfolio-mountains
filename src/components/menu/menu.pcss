@@ -38,6 +38,22 @@
     }
   }
 
+  &--footer &__item {
+    @include tablets {
+      margin-right: 0;
+      flex-basis: 25%;
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 620px) {
+      flex-basis: calc(100% / 3);
+    }
+
+    @media screen and (max-width: 360px) {
+      flex-basis: calc(100% / 2);
+    }
+  }
+
   &__link {
     position: relative;
     color: transparent;
@@ -87,6 +103,9 @@
 
   &--footer &__link {
     color: transparent;
+    @include tablets {
+      font-size: 14px;
+    }
 
     &:after {
       color: #fff;
