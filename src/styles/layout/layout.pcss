@@ -129,15 +129,23 @@
 ============================================================================================ */
 .values {
   position: relative;
-  padding: 146.8px 0 63px;
-  background-image: url('~images/content/skills-image.png');
-  background-repeat: no-repeat;
-  background-position: 1.2vw 74%;
+  padding: 147px 0 63px;
+  min-height: calc(147px + 627px + 63px);
 
   &__container {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+  }
+
+  &__header {
+    margin-bottom: 102px;
+    margin-right: 200px;
+    @include tablets {
+      width: 80%;
+      margin: 0 auto 102px;
+      text-align: center;
+    }
   }
 
   &__title {
@@ -146,26 +154,56 @@
     margin-bottom: 53px;
   }
 
-  &__content {
-    width: 66%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__header {
-    width: 63%;
-    margin-bottom: 75px;;
-    align-self: flex-start;
-  }
-
   &__description {
     font-weight: 600;
     line-height: 30px;
     color: rgba($links-color, .5);
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 70%;
+    min-height: 627px;
+
+    @include desktop {
+      width: auto;
+      margin-left: calc(83vw - 40rem);
+    }
+    @include tablets {
+      margin-left: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 627px;
+      background-image: url('~images/content/skills-image.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      left: -500px;
+      @include tablets {
+        width: calc(520px / 2);
+        height: calc(627px / 2);
+        position: relative;
+        top: unset;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+  }
+
   &__skills {
-    margin-left: 116px;
+    margin-left: 11%;
+    @include tablets {
+      margin-left: 0;
+    }
   }
 }
 
@@ -241,9 +279,7 @@
   @include tablets {
     min-height: 1100px;
   }
-  //@include phones {
-  //  min-height: 1200PX;
-  //}
+//@include phones { //  min-height: 1200PX; //}
 
   &__container {
     padding: 150px 0 166px;
@@ -357,7 +393,7 @@
       flex-direction: column;
       justify-content: flex-start;
     }
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 900px) {
       flex-basis: 30%;
       margin-right: 30px;
     }
@@ -399,7 +435,7 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 900px) {
       flex-direction: column;
     }
   }
