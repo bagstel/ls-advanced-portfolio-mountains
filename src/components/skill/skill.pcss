@@ -4,6 +4,12 @@
   &__svg-shape {
     width: 168px;
     fill: transparent;
+    @include desktop {
+      width: 150px;
+    }
+    @media screen and (max-width: 800px) {
+      width: 140px;
+    }
   }
 
   &__svg-circle {
