@@ -5,3 +5,24 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
+
+mixin avatar(image, mod)
+  .avatar(class=`${mod ? 'avatar--' + mod : ''}`)
+    img(src=require(`images/${ image }`), alt="").avatar__pic
+
+mixin avatarVue(image, mod)
+  .avatar(class=`${mod ? 'avatar--' + mod : ''}`)
+    img(src=`~images/${ image }`, alt="").avatar__pic
+
+mixin user(data, mod, vue)
+  div(class=`${mod ? 'user user--' + mod : 'user'}`)
+    .user__column
+      if (vue)
+        +avatarVue(data.image, mod)
+      else
+        +avatar(data.image, mod)
+    if (data.name)
+      .user__column
+        .user__row.user__name !{ data.name }
+        if (data.occ)
+          .user__row.user__occ !{ data.occ }

@@ -1,31 +1,23 @@
 .login {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
-  position: relative;
   height: 100vh;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(#414c63, .5);
-  }
-
   &__content {
-    position: relative;
-  }
-
-  &__form {
     width: 563px;
     padding: 50px 77px 60px;
     background: #fff;
   }
 
+  &__form {
+
+  }
+
+  &__row:not(:last-child) {
+    margin-bottom: 40px;
+  }
   &__title {
     text-align: center;
     margin-bottom: 34px;

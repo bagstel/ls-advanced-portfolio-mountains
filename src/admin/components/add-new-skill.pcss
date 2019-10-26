@@ -1,0 +1,28 @@
+.add-new-skill {
+  display: flex;
+  flex-grow: 0;
+  justify-content: flex-end;
+
+  &__cell {
+    margin-right: 20px;
+
+    &:nth-child(1) {
+      flex-basis: 45%;
+    }
+
+    &:nth-child(2) {
+      flex-basis: 20%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.is-blocked {
+    opacity: .3;
+    filter: grayscale(100%);
+    pointer-events: none;
+    user-select: none;
+  }
+}

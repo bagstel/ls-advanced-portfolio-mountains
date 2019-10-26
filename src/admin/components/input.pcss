@@ -1,0 +1,96 @@
+/* Form's elements
+============================================================================================ */
+.form {
+  &__input-wrap {
+    position: relative;
+  }
+
+  &__label {
+    display: inline-block;
+    color: rgba($text-color, 0.5);
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__input,
+  &__textarea {
+    color: $text-color;
+    line-height: 28px;
+    padding: 0;
+    background: transparent;
+    width: 100%;
+
+    &--strong {
+      font-weight: 600;
+
+      &::placeholder {
+        color: inherit;
+        font-weight: inherit;
+      }
+    }
+
+    &:focus,
+    &:focus {
+      border-bottom-color: $links-active;
+    }
+
+    &:focus ~ .form__icon {
+      fill: $links-active
+    }
+
+    &--error {
+      .form__icon {
+        fill: $errors-color;
+      }
+
+      & > input[type="text"],
+      & > input[type="password"] {
+        border-color: $errors-color;
+      }
+    }
+  }
+
+
+  &__input {
+    padding-bottom: 10px;
+    border: 0;
+    border-bottom: 1px solid #1f232d;
+  }
+
+  &__textarea {
+    height: 146px;
+    padding: 20px;
+    resize: none;
+    border: 1px solid rgba($text-color, 0.3);
+  }
+
+  &__p-left {
+    padding-left: 40px;
+  }
+
+  &__icon {
+    display: flex;
+    position: absolute;
+    top: 4px;
+    width: 26px;
+    height: 30px;
+    fill: #cfd2d7;
+  }
+}
+
+.form {
+  &--strong {
+    .form__input,
+    .form__textarea {
+      font-weight: 600;
+    }
+  }
+
+  &--18 {
+    .form__input {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+}

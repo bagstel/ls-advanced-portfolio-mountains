@@ -12,7 +12,7 @@
     font-weight: 600;
     line-height: 36px;
     cursor: pointer;
-    padding-left: 40px;
+  //padding-left: 40px;
   }
 
   &__input-wrap {
@@ -70,8 +70,22 @@
     &__icon--$(icon) {
       background-image: svg-load("$(icon).svg", fill=#cfd2d7);
     }
+
     &__input:focus ~ .form__icon--$(icon) {
       background-image: svg-load("$(icon).svg", fill=$links-active);
     }
   }
+}
+
+@each $icon in (user, key, envelope, message) {
+  .error {
+    .form__icon--$(icon) {
+      background-image: svg-load("$(icon).svg", fill=#f00);
+    }
+  }
+}
+
+.error input[type="text"],
+.error input[type="password"]{
+  border-color: #f00;
 }

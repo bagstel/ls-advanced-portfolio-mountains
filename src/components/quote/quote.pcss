@@ -5,6 +5,12 @@
   flex-direction: column;
   justify-content: space-between;
   padding-left: 24%;
+  @include tablets {
+    padding-left: 40px;
+  }
+  @include phones {
+    padding-left: 0;
+  }
 
   &:before {
     content: "";
@@ -20,15 +26,7 @@
       width: 30px;
       height: 26px;
     }
-  }
-  @include tablets {
-    padding-left: 40px;
-  }
-
-  @include phones {
-    padding-left: 0;
-
-    &:before {
+    @include phones {
       display: none;
     }
   }
@@ -38,41 +36,9 @@
     color: rgba($text-color, .5);
     font-weight: 600;
     line-height: 30px;
-
     @include tablets {
       font-size: 14px;
       line-height: 24px;
-    }
-  }
-}
-
-.user {
-  display: flex;
-  align-items: center;
-
-  &__avatar {
-    margin-right: 30px;
-    width: 74px;
-    height: 74px;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  &__name {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    @include tablets {
-      font-size: 16px;
-    }
-  }
-
-  &__position {
-    color: rgba($text-color, .3);
-    font-weight: 600;
-
-    @include tablets {
-      font-size: 14px;
     }
   }
 }

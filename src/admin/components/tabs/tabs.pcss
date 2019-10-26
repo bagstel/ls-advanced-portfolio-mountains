@@ -9,13 +9,19 @@
     height: 100%;
   }
 
-  &__btn {
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 125px;
+    height: 100%;
     color: #414c63;
     line-height: 2;
-    height: 100%;
     border-bottom: 3px solid transparent;
+    text-decoration: none;
+    transition: all .3s ease-in;
 
+    &--active,
     &:hover {
       color: $links-active;
       font-weight: 600;

@@ -1,0 +1,93 @@
+.root-container
+  section.about
+    .page__container
+      .page__header
+        .page__columns
+          h2.page-title Блок «Обо мне»
+        .page__columns
+          button(type="button").btn.btn--add.btn--text Добавить группу
+      .page__content
+        ul.about__list
+          // первый
+          li.about__item
+            .card
+              .card__header
+                .card__column
+                  input(type="text", placeholder='Название новой группы').form__input
+                .card__column
+                  .controls
+                    .controls__btn
+                      button(type='button').btn.btn-icon--check
+                    .controls__btn
+                      button(type='button').btn.btn-icon--cancel
+              .card__content
+              .card__footer
+                .card__column
+                  form.add-new-skill.is-blocked
+                    .add-new-skill__cell
+                      input(type="text", placeholder='Новый навык').form__input
+                    .add-new-skill__cell
+                      input(type="number").form__input
+                    .add-new-skill__cell
+                      button(type="submit").btn.btn--add.btn--big
+          // втарой
+          li.about__item
+            .card
+              .card__header
+                .card__column
+                  .page-subtitle Frontend
+                .card__column
+                  .controls
+                    .controls__btn
+                      button(type='button').btn.btn-icon--edit
+              .card__content
+                .skills
+                  .skills__row
+                    .skills__cell
+                      input(type="text" value="HTML5").form__input
+                    .skills__cell
+                      input(type="text" value="25").form__input.form__input--strong
+                    .skills__cell
+                      .controls
+                        .controls__btn
+                          button(type='button').btn.btn-icon--check
+                        .controls__btn
+                          button(type='button').btn.btn-icon--cancel
+              .card__footer
+                .card__column
+                  form.add-new-skill
+                    .add-new-skill__cell
+                      input(type="text", placeholder='Новый навык').form__input
+                    .add-new-skill__cell
+                      input(type="number").form__input
+                    .add-new-skill__cell
+                      button(type="submit").btn.btn--add.btn--big
+            // третий
+            li.about__item
+              .card
+                .card__header
+                  .card__column
+                    .page-subtitle Workflow
+                  .card__column
+                    .controls
+                      .controls__btn
+                        button(type='button').btn.btn-icon--edit
+                .card__content
+                  .skills
+                    .skills__row(v-for="item in [{ key: 'Git', value: 20 }, { key: 'Gulp', value: 30 }, { key:'Webpack', value: 40 }]")
+                      .skills__cell {{ item.key }}
+                      .skills__cell {{ item.value }} %
+                      .skills__cell
+                        .controls
+                          .controls__btn
+                            button(type='button').btn.btn-icon--edit
+                          .controls__btn
+                            button(type='button').btn.btn-icon--delete
+                .card__footer
+                  form.add-new-skill
+                    .add-new-skill__cell
+                      input(type="text", placeholder='Новый навык').form__input
+                    .add-new-skill__cell
+                      input(type="number").form__input
+                    .add-new-skill__cell
+                      button(type="submit").btn.btn--add.btn--big

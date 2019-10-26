@@ -21,7 +21,7 @@ git commit -m 'deploy'
 # git push -f origin master
 
 ## if you are deploying to https://<USERNAME>.github.io/<REPO>
-git add remote origin https://github.com/bagstel/ls-advanced-portfolio-mountains.git
+git remote add origin https://github.com/bagstel/ls-advanced-portfolio-mountains.git
 git push -f origin master:gh-pages
 
 cd -
