@@ -1,15 +1,34 @@
-mixin input (className, labelText, icon, inpuType, inputName, placeholder)
+mixin input (inputType, inputName, placeholder, icon)
+  input(
+      type= inputType,
+      name= inputName,
+      class=`form__input ${icon ? 'form__p-left' : ''}`,
+      id=`form_${ inputName }`,
+      placeholder=`${placeholder ? placeholder : ''}`,
+      required
+    )
+
+mixin textarea (inputName, placeholder, icon)
+  textarea(
+      name= inputName,
+      class=`form__input ${ icon ? 'form__p-left' : '' }`,
+      id=`form-${ inputName }`,
+      placeholder=`${placeholder ? placeholder : ''}`,
+      required
+    )
+
+mixin input-block (className, labelText, icon, inputType, inputName, placeholder)
   .form__row
     label(for=`form_${ inputName }`).form__label #{labelText}
     .form__input-wrap
-      input(type= inpuType, name= inputName, id=`form_${ inputName }`, class=`form__input`, placeholder=`${placeholder}`, required)
+      +input(inputType, inputName, placeholder, icon)
       if icon
         .form__icon(class=`form__icon--${ icon }`)
 
-mixin textarea (className, labelText, icon, inputName, placeholder)
+mixin textarea-block (className, labelText, icon, inputName, placeholder)
   .form__row
     label(for=`form-${ inputName }` class=`form__label`)= labelText
     .form__input-wrap
-      textarea(name= inputName, id=`form-${ inputName }`, class=`form__textarea`, placeholder=`${placeholder}`, required)
+      +textarea(inputName, placeholder, icon)
       if icon
         .form__icon(class=`form__icon--${ icon }`)

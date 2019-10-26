@@ -17,6 +17,7 @@
 
   &__input-wrap {
     display: flex;
+    position: relative;
   }
 
   &__input,
@@ -28,7 +29,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 36px;
-    padding: 0 0 12px 40px;
+    padding: 0 0 12px 0;
     border-bottom: 2px solid $links-color;
     order: 1;
     cursor: pointer;
@@ -36,6 +37,10 @@
     &:focus {
       cursor: initial;
     }
+  }
+
+  &__p-left {
+    padding-left: 40px;
   }
 
   &__textarea {
@@ -49,8 +54,7 @@
   &__icon {
     display: flex;
     position: absolute;
-    top: 50%;
-    transform: translateY(-12%);
+    top: 4px;
     width: 26px;
     height: 30px;
     background-repeat: no-repeat;
