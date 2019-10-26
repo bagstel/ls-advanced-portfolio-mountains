@@ -4,6 +4,7 @@
   "links-active": "#5500f2",
   "links-hover-footer": "#ff9a00",
   "admin-blue": "#383bcf",
+  "errors-color": "#cd1515",
   "tags-color": "#2f3642",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",

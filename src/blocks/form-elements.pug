@@ -11,7 +11,7 @@ mixin input (inputType, inputName, placeholder, icon)
 mixin textarea (inputName, placeholder, icon)
   textarea(
       name= inputName,
-      class=`form__input ${ icon ? 'form__p-left' : '' }`,
+      class=`form__textarea ${ icon ? 'form__p-left' : '' }`,
       id=`form-${ inputName }`,
       placeholder=`${placeholder ? placeholder : ''}`,
       required

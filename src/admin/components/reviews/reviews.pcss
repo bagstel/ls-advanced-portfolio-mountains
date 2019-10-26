@@ -1,0 +1,29 @@
+.reviews{
+  img {
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+  }
+
+  &__item {
+    flex-basis: calc(100% / 3 - 30px);
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__row {
+    display: flex;
+    margin-bottom: 20px;
+
+    p {
+      color: rgba($text-color, .7);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 30px;
+    }
+  }
+}

@@ -4,7 +4,9 @@ script(type="text/x-template")#quote-template
       p {{ review.text }}
     .quote__user
       .user
-        .user__avatar: img(:src="review.photo", alt="").user__avatar-pic
-        .user__info
-          .user__name {{ review.author }}
-          .user__position {{ review.occ }}
+        .user__column
+          .avatar.avatar--74
+            img(:src="review.photo", alt="").avatar-pic
+        .user__column
+          .user__row.user__name {{ review.author }}
+          .user__row.user__occ {{ review.occ }}
