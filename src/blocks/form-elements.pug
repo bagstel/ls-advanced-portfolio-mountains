@@ -3,7 +3,7 @@ mixin input (inputType, inputName, placeholder, icon)
       type= inputType,
       name= inputName,
       class=`form__input ${icon ? 'form__p-left' : ''}`,
-      id=`form_${ inputName }`,
+      id=`${ inputName ? 'form_' + inputName : '' }`,
       placeholder=`${placeholder ? placeholder : ''}`,
       required
     )
