@@ -1,13 +1,18 @@
 <template lang="pug">
   include ../blocks/form-elements.pug
   include ../blocks/button.pug
-  .login
-    .login__content
-      form.login__form
-        .title.login__title Авторизация
-        +input('login__form-input', 'Логин', 'user', 'text', 'login', 'Terminator_2000')
-        +input('login__form-input', 'Пароль', 'key', 'password', 'password', '•••••••••••••••••••••')
-        .login__btn: +button('feedback', 'submit', 'Отправить', '', false)
+  .root-wrapper-container
+    include ../blocks/login.pug
+    include ../blocks/header-admin.pug
+    .tabs
+      .container.tabs__container
+        ul.tabs__list
+          li.tabs__item
+            button(type="button").btn.tabs__btn Обо мне
+          li.tabs__item
+            button(type="button").btn.tabs__btn Работы
+          li.tabs__item
+            button(type="button").btn.tabs__btn Отзывы
 </template>
 
 <script>
@@ -22,44 +27,35 @@
   @import "../styles/layout/base.pcss";
   @import "../styles/blocks/button.pcss";
   @import "../styles/blocks/form-elements.pcss";
+  @import "../styles/blocks/login.pcss";
+  @import "../styles/blocks/header-admin.pcss";
+  @import "../styles/blocks/user.pcss";
 
-  .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
-    position: relative;
-    height: 100vh;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(#414c63, .5);
+  .tabs {
+    &__list {
+      display: flex;
+      height: 77px;
     }
 
-    &__content {
-      position: relative;
-    }
-
-    &__form {
-      width: 563px;
-      padding: 50px 77px 60px;
-      background: #fff;
-    }
-
-    &__title {
-      text-align: center;
-      margin-bottom: 34px;
+    &__item {
+      margin-right: 30px;
+      height: 100%;
     }
 
     &__btn {
-      display: flex;
-      justify-content: center;
+      width: 125px;
+      color: #414c63;
+      line-height: 2;
+      height: 100%;
+      border-bottom: 3px solid transparent;
+
+      &:hover {
+        color: $links-active;
+        font-weight: 600;
+        border-color: currentColor;
+      }
     }
   }
+
 
 </style>

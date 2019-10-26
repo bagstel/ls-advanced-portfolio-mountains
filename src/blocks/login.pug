@@ -1,0 +1,7 @@
+.login
+  .login__content
+    form.login__form
+      .title.login__title Авторизация
+      +input('login__form-input', 'Логин', 'user', 'text', 'login', 'Terminator_2000')
+      +input('login__form-input', 'Пароль', 'key', 'password', 'password', '•••••••••••••••••••••')
+      .login__btn: +button('feedback', 'submit', 'Отправить', '', false)
