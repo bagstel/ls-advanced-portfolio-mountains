@@ -8,7 +8,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 import './scripts/header';
-import './scripts/inputs';
 import './scripts/parallax';
 
 // Menu

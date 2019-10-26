@@ -5,8 +5,8 @@
     .login__content
       form.login__form
         .title.login__title Авторизация
-        +adminInput('login__form-input', 'Логин', 'user', 'text', 'login')
-        +adminInput('login__form-input', 'Пароль', 'key', 'password', 'password')
+        +input('login__form-input', 'Логин', 'user', 'text', 'login', 'Terminator_2000')
+        +input('login__form-input', 'Пароль', 'key', 'password', 'password', '•••••••••••••••••••••')
         .login__btn: +button('feedback', 'submit', 'Отправить', '', false)
 </template>
 
@@ -21,6 +21,7 @@
   @import "../styles/mixins.pcss";
   @import "../styles/layout/base.pcss";
   @import "../styles/blocks/button.pcss";
+  @import "../styles/blocks/form-elements.pcss";
 
   .login {
     display: flex;
@@ -28,6 +29,7 @@
     justify-content: center;
     background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
     position: relative;
+    height: 100vh;
 
     &:before {
       content: "";
@@ -60,56 +62,4 @@
     }
   }
 
-  .form {
-    &__row {
-      position: relative;
-      margin-bottom: 40px;
-    }
-
-    &__label {
-      display: block;
-      color: rgba($links-color, .3);
-      font-weight: 600;
-      line-height: 36px;
-      cursor: pointer;
-      padding-left: 40px;
-    }
-
-    &__input-wrap {
-      display: flex;
-    }
-
-    &__input {
-      background: transparent;
-      border: 0;
-      color: $links-color;
-      width: 100%;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 36px;
-      padding: 0 0 12px 40px;
-      border-bottom: 2px solid $links-color;
-      order: 1;
-      cursor: pointer;
-
-      &:focus {
-        cursor: initial;
-      }
-    }
-
-    &__icon {
-      display: flex;
-      position: absolute;
-      top: 50%;
-      width: 26px;
-      height: 30px;
-      background-repeat: no-repeat;
-
-      @each $icon in (user, key) {
-        &--$(icon) {
-          background-image: svg-load("$(icon).svg", fill=#cfd2d7);
-        }
-      }
-    }
-  }
 </style>

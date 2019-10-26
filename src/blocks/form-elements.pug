@@ -1,29 +1,15 @@
 mixin input (className, labelText, icon, inpuType, inputName, placeholder)
-  .form__input-wrapper
-    input(type= inpuType, name= inputName, id=`form_${inputName}`, class=`form__input`, placeholder=" ", required)
-    label(for=`form_${inputName}`).form__label #{labelText}
-    if icon
-      .form__icon: +icon(`${icon}`, `form__icon--${icon}`)
-
-mixin textarea (className, labelText, icon, inputName, placeholder)
-  .form__textarea-wrapper
-    textarea(name= inputName, id=`form-${inputName}`, class=`form__textarea`, placeholder=" ", required)
-    label(for=`form-${inputName}` class=`form__label`)= labelText
-    if icon
-      .form__icon: +icon(`${icon}`, `form__icon--${icon}`)
-
-mixin adminInput (className, labelText, icon, inpuType, inputName, placeholder)
   .form__row
-    label(for=`form_${inputName}`).form__label #{labelText}
+    label(for=`form_${ inputName }`).form__label #{labelText}
     .form__input-wrap
+      input(type= inpuType, name= inputName, id=`form_${ inputName }`, class=`form__input`, placeholder=`${placeholder}`, required)
       if icon
         .form__icon(class=`form__icon--${ icon }`)
-      input(type= inpuType, name= inputName, id=`form_${inputName}`, class=`form__input`, placeholder=" ", required)
 
-
-mixin adminTextarea (className, labelText, icon, inputName, placeholder)
-  .form__textarea-wrapper
-    textarea(name= inputName, id=`form-${inputName}`, class=`form__textarea`, placeholder=" ", required)
-    if icon
-      .form__icon(class=`form__icon--${ icon }`)
-    label(for=`form-${inputName}` class=`form__label`)= labelText
+mixin textarea (className, labelText, icon, inputName, placeholder)
+  .form__row
+    label(for=`form-${ inputName }` class=`form__label`)= labelText
+    .form__input-wrap
+      textarea(name= inputName, id=`form-${ inputName }`, class=`form__textarea`, placeholder=`${placeholder}`, required)
+      if icon
+        .form__icon(class=`form__icon--${ icon }`)

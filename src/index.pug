@@ -92,11 +92,12 @@ html(lang="ru")
             form.feedback__form
               .feedback__double-block-wrapper
                 .feedback__single-wrapper
-                  +input('feedback', 'Введите ваше имя', 'user', 'text', 'name')
+                  +input('feedback', 'Введите ваше имя', 'user', 'text', 'name', 'Ковальчук Дмитрий')
                 .feedback__single-wrapper
-                  +input('feedback', 'Введите ваш email', 'envelope', 'email', 'email')
+                  +input('feedback', 'Введите ваш email', 'envelope', 'email', 'email', 'loftschool@study.com')
               .feedback__single-wrapper
-                +textarea('feedback', 'Сообщение к письму', 'message', 'message')
+                +textarea('feedback', 'Сообщение к письму', 'message', 'message', 'Требуется ваша помощь в создании сайта.\n' +
+                'Интересуют сроки и цена вопроса')
               .feedback__button
                 +button('feedback', 'submit', 'Отправить')
       <!--================ Footer section =================-->
