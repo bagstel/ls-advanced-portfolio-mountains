@@ -24,11 +24,18 @@
   }
   &--reviews > &__column:nth-child(2){
     flex-basis: 60%;
+    @include desktop {
+      flex-basis: 100%;
+    }
   }
 
   &__row-double {
     display: flex;
     justify-content: space-between;
+    @include tablets {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
   }
 
   &__row-double > &__row {
@@ -73,7 +80,6 @@
       img {
         object-fit: cover;
       }
-    //background-color: #dee4ed;
     }
   }
 
@@ -90,8 +96,4 @@
   &__btns {
     justify-content: flex-end;
   }
-  //&__reload {
-  //  display: flex;
-  //  justify-content: center;
-  //}
 }

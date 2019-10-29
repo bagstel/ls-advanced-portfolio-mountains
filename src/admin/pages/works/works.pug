@@ -1,0 +1,80 @@
+include ../../../blocks/form-elements.pug
+include ../../../blocks/button.pug
+
+section.works
+  .page__container
+    .page__header
+      .page__columns
+        h1.page-title.works__title Блок «Работы»
+    .page__content
+      .page__row
+        .card
+          .card__header
+            .card__column
+              .page-subtitle Редактирование работы
+          .card__content
+            form.edit-form.form--strong
+              .edit-form__column
+                input(type="file", name="work-image")#upload-pic.edit-form__file
+                .edit-form__row
+                  .edit-form__frame
+                    img(src="~images/bg/bg_budda.png")
+                .edit-form__row
+                  .edit-form__button
+                    button(type="button").btn
+                      label(for="upload-pic").btn.btn--link Изменить превью
+                .edit-form__row
+                  .edit-form__frame
+                    .edit-form__info
+                      | Перетащите или загрузите для загрузки изображения
+                    .edit-form__button
+                      button(type="button").btn
+                        label(for="upload-pic").btn.btn--gradient ЗАГРУЗИТЬ
+              .edit-form__column
+                .edit-form__row
+                  +input-block('work__name', 'Название', '', 'text', 'work-name', 'Дизайн сайта для авто салона Porsche')
+                .edit-form__row
+                  +input-block('work__link', 'Ссылка', '', 'text', 'work-link', 'https://www.porsche-pulkovo.ru')
+                .edit-form__row
+                  +textarea-block('work__desc', 'Описание', '', 'work-desc', 'Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей')
+                .edit-form__row
+                  +input-block('work__tags', 'Добавление тэга', '', 'text', 'work-tags', 'Jquery, Vue.js, HTML5')
+                .edit-form__row
+                  .controls.edit-form__btns
+                    .controls__btn
+                      button(type="reset").btn.btn--link Отмена
+                    .controls__btn
+                      button(type="submit").btn.btn--gradient Сохранить
+      .page__row
+        ul.works__list
+          li.works__item
+            .card.card--add
+              button(type="button").btn.btn--add.btn--xbig
+          each i in [1, 2, 3, 4]
+            li.works__item
+              .card.card--works
+                .card__header
+                  img(src=`~images/admin/works/${i}.jpg`)
+                .card__content
+                  .works__row
+                    h3.page-subtitle Сайт школы образования
+                  .works__row
+                    p
+                      | Этот парень проходил обучение веб-разработке не где-то,
+                      | а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .works__row
+                    a(href="#").btn.btn--link http://loftschool.ru
+                .card__footer
+                  .controls
+                    .controls__btn
+                      button(type="button").btn
+                        .btn__column Править
+                        .btn__column
+                          svg(width="17" height="17").btn-icon--blue
+                            use(xlink:href="sprite.svg#pencil")
+                    .controls__btn
+                      button(type="button").btn
+                        .btn__column Удалить
+                        .btn__column
+                          svg(width="15" height="15").btn-icon--red
+                            use(xlink:href="sprite.svg#cross")

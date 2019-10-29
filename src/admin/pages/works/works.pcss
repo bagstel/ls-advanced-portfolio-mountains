@@ -1,3 +1,5 @@
+@import "../../../styles/mixins.pcss";
+
 .works {
   img {
     width: 100%;
@@ -13,6 +15,12 @@
     flex-basis: calc(100% / 3 - 30px);
     margin-left: 30px;
     margin-bottom: 30px;
+    @include desktop {
+      flex-basis: calc(100% / 2 - 30px);
+    }
+    @include tablets {
+      flex-basis: 100%;
+    }
   }
 
   &__row {
