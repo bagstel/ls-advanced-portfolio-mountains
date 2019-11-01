@@ -1,0 +1,14 @@
+.input(:class="iconClass")
+  label(v-if="title" :for="'input__' + name").input__label {{ title }}
+  .input__wrapper
+    input(
+      :autofocus="autofocus"
+      autocomplete="off"
+      :type="type"
+      :name="name"
+      :id="'input__' + name"
+      :class="{ 'input__element--error': errorText }"
+      :value="value"
+      @input="$emit('input', $event.target.value)").input__element
+
+  vc-tooltip-input(:errorText="errorText")

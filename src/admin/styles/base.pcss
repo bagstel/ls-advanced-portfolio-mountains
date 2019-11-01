@@ -58,27 +58,43 @@ img {
   max-height: 100%;
 }
 
-.root-container {
-  background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
+.root-wrapper {
   position: relative;
-  min-height: 100vh;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, .9);
-  }
-
-  &--dark:before {
-    background-color: rgba($text-color, .5);
-  }
 }
 
 .page {
+  &__wrapper {
+    background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
+    position: relative;
+    min-height: 100vh;
+    padding: 60px 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, .9);
+    }
+
+    &--dark {
+      padding: 0;
+
+      &:before {
+        background-color: rgba(#2d3c4e, .9);
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    max-width: 92.5rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+
   &-title,
   &-subtitle {
     color: $text-color;
@@ -92,14 +108,6 @@ img {
 
   &-subtitle {
     font-size: 18px;
-  }
-
-  &__container {
-    position: relative;
-    max-width: 92.5rem;
-    width: 95%;
-    margin: 0 auto;
-    padding: 60px 0 30px 0;
   }
 
   &__header {

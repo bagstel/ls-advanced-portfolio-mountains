@@ -1,13 +1,14 @@
 include ../../../mixins.pug
 
 header.header
-  .container.header__container
-    .header__info
-      .user.user--admin-header
-        .user__column
-          +avatarVue("content/user.jpg", 45)
-        .user__column
-          .user__row.user__name Владимир Астаханов
-      .header__title Панель администрирования
-    .header__btn
-      router-link(to="/" class="btn--exit") Выйти
+  .page__container
+    .header__container
+      .header__info
+        .user.user--admin-header
+          .user__column
+            +avatarVue("content/user.jpg", 45)
+          .user__column
+            .user__row.user__name Владимир Астаханов
+        .header__title Панель администрирования
+      .header__btn
+        router-link(to="/" class="btn--exit") Выйти

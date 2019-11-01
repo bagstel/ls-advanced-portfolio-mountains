@@ -1,6 +1,5 @@
 import './styles/main.pcss';
 import Vue from 'vue';
-import xhr from './scripts/xhrRequests';
 import EventBus from './scripts/eventBus';
 
 if (process.env.NODE_ENV === 'development') {
