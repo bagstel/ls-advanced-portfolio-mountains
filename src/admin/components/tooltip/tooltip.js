@@ -1,8 +1,25 @@
+import { mapState, mapActions } from 'vuex';
+
 export default {
-  props: ['tooltip'],
+  computed: {
+    ...mapState('tooltip', {
+      showed: state => state.showed,
+      type: state => state.type,
+      message: state => state.message,
+    })
+  },
   methods: {
-    hideTooltip() {
-      this.tooltip.showed = false;
+    ...mapActions('tooltip', ['closeTooltip'])
+  },
+  watch: {
+    showed (value) {
+      if (value) {
+        let timeout;
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => this.closeTooltip(), 3000);
+      }
     }
   }
 };

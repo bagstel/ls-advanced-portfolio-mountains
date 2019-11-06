@@ -3,11 +3,23 @@ section.login
     h2.login__title Авторизация
     form(@submit.prevent="submit").login__form
       .login__row
-        vc-input(name="name" title="Логин" icon="user" v-model="user.name" :errorText="validation.firstError('user.name')" :autofocus="true")
+        vc-input(
+          :strong="true"
+          name="name"
+          title="Логин"
+          icon="user"
+          v-model="user.name"
+          :errorText="validation.firstError('user.name')"
+          :autofocus="true")
       .login__row
-        vc-input(name="password" title="Пароль" icon="key" type="password" v-model="user.password" :errorText="validation.firstError('user.password')")
+        vc-input(
+          :strong="true"
+          name="password"
+          title="Пароль"
+          icon="key"
+          type="password"
+          v-model="user.password"
+          :errorText="validation.firstError('user.password')")
       .login__row
         .login__btn
           button(type="submit").btn.btn--feedback Отправить
-  .tooltip-container(:class="{showed: tooltip.showed }")
-    vc-tooltip(:tooltip="tooltip")

@@ -5,17 +5,17 @@ export default [
   {
     path: '/',
     components: {
-      default: () => import('../pages/about/about.vue'),
-      header: Header,
-      tabs: Tabs
+      default: () => import('../pages/skills/skills.vue'),
+      tabs: Tabs,
+      header: Header
     }
   },
   {
     path: '/works',
     components: {
       default: () => import('../pages/works/works.vue'),
-      header: Header,
-      tabs: Tabs
+      tabs: Tabs,
+      header: Header
     }
   },
   {

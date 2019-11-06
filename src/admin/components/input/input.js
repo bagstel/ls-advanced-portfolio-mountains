@@ -1,6 +1,7 @@
 export default {
   name: 'input',
   props: {
+    strong: Boolean,
     name: String,
     autofocus: Boolean,
     title: String,
@@ -14,17 +15,20 @@ export default {
       default: '',
       validator: value => ['', 'user', 'key'].includes(value)
     },
+    placeholder: {
+      type: String,
+      default: ''
+    },
     errorText: {
       type: String,
       default: ''
     }
   },
-  data: () => ({}),
   computed: {
     iconClass () {
       const icon = this.icon;
 
-      return [this.icon].length ? ` input--iconed input__icon--${ this.icon }` : '';
+      return icon.length ? `input--iconed input__icon--${ icon }` : '';
     }
   },
   components: {

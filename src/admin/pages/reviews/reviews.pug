@@ -8,69 +8,12 @@ section.reviews
       .page__columns
         h1.page-title.works__title Блок «Отзывы»
     .page__content
-      .page__row
-        .card
-          .card__header
-            .card__column
-              .page-subtitle Новый отзыв
-          .card__content
-            form.edit-form.edit-form--reviews.form--strong
-              .edit-form__column
-                input(type="file", name="reviews-image")#upload-pic.edit-form__file
-                .edit-form__row
-                  .edit-form__frame
-                    img(src="~images/content/user.jpg")
-                .edit-form__row
-                  .edit-form__frame
-                    svg(fill="#fff" width="70%" height="70%")
-                      use(xlink:href="sprite.svg#user-full")
-                .edit-form__row
-                  .edit-form__button
-                    button(type="button").btn
-                      label(for="upload-pic").btn.btn--link Добавить фото
-              .edit-form__column
-                .edit-form__row-double
-                  .edit-form__row
-                    +input-block('reviews__name', 'Имя автора', '', 'text', 'reviews-name', 'Ковальчук Дмитрий')
-                  .edit-form__row
-                    +input-block('reviews__link', 'Титул автора', '', 'text', 'reviews-link', 'Основатель LoftSchool')
-                .edit-form__row
-                  +textarea-block('reviews__desc', 'Отзыв', '', 'reviews-desc', 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!')
-                .edit-form__row
-                  .controls.edit-form__btns
-                    .controls__btn
-                      button(type="reset").btn.btn--link Отмена
-                    .controls__btn
-                      button(type="submit").btn.btn--gradient Сохранить
+      .page__row(v-if="showAddingCard")
+        vc-reviews-add-new(:review="review" @hideAddingCard="hideAddingCard")
       .page__row
         ul.reviews__list
           li.reviews__item
             .card.card--add
-              button(type="button").btn.btn--add.btn--xbig
-          each i in [1, 2, 3, 4]
-            li.reviews__item
-              .card
-                .card__header
-                  .user
-                    .user__column
-                      +avatarVue("content/sabantsev.jpg", 50)
-                    .user__column
-                      .user__row.user__name Владимир Сабанцев
-                      .user__row.user__occ Преподаватель
-                .card__content
-                  .reviews__row
-                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                .card__footer
-                  .controls
-                    .controls__btn
-                      button(type="button").btn
-                        .btn__column Править
-                        .btn__column
-                          svg(width="17" height="17").btn-icon--blue
-                            use(xlink:href="sprite.svg#pencil")
-                    .controls__btn
-                      button(type="button").btn
-                        .btn__column Удалить
-                        .btn__column
-                          svg(width="15" height="15").btn-icon--red
-                            use(xlink:href="sprite.svg#cross")
+              button(type="button" @click="showAddingCard = true").btn.btn--add.btn--xbig
+          li(v-for="review in getReviews" :key="review.id").reviews__item
+            vc-reviews-item(:review="review" @editReview="editReview" @hideAddingCard="hideAddingCard")

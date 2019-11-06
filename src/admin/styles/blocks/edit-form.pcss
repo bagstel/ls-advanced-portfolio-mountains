@@ -19,10 +19,11 @@
     }
   }
 
-  &--reviews > &__column:nth-child(1){
+  &--reviews > &__column:nth-child(1) {
     flex-basis: auto;
   }
-  &--reviews > &__column:nth-child(2){
+
+  &--reviews > &__column:nth-child(2) {
     flex-basis: 60%;
     @include desktop {
       flex-basis: 100%;
@@ -62,8 +63,8 @@
     border: 1px dashed #a1a1a1;
     background-color: #dee4ed;
     overflow: hidden;
-    object-fit: cover;
-    object-position: center;
+    background-size: cover;
+    background-position: center center;
 
     img {
       height: auto;
@@ -77,8 +78,11 @@
       height: 200px;
       border: none;
       border-radius: 50%;
-      img {
-        object-fit: cover;
+      background-image: svg-load("user-full.svg", fill=#fff);
+      background-repeat: no-repeat;
+      background-size: 75%;
+      &.filled {
+        background-size: cover;
       }
     }
   }

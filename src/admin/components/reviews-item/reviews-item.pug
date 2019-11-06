@@ -1,0 +1,17 @@
+.card
+  .card__header
+    .user
+      .user__column
+        .avatar.avatar--50(:style="reviewPhoto")
+      .user__column
+        .user__row.user__name {{ review.author }}
+        .user__row.user__occ {{ review.occ }}
+  .card__content
+    .reviews__row
+      p {{ review.text }}
+  .card__footer
+    .controls
+      .controls__btn
+        button(type="button" @click="editReview").btn.btn--edit Править
+      .controls__btn
+        button(type="button" @click="deleteTheReview(review.id)").btn.btn--cross Удалить

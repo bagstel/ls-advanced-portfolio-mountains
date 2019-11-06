@@ -1,0 +1,44 @@
+.card
+  .card__header
+    .card__column
+      .page-subtitle Новый отзыв
+  .card__content
+    form(@submit.prevent="reviewCard(newReview)" @reset.prevent="hideAddingCard").edit-form.edit-form--reviews.form--strong
+      .edit-form__column
+        input(
+          type="file"
+          name="reviews-image"
+          @change="appendFileAndRenderPhoto")#upload-pic.edit-form__file
+        .edit-form__row
+          .edit-form__frame(:class="{ filled: renderedPhoto.length }" :style="renderedBackground")
+        .edit-form__row
+          .edit-form__button
+            label(for="upload-pic").btn.btn--link Добавить фото
+        vc-tooltip-input(:errorText="validation.firstError('newReview.photo')")
+      .edit-form__column
+        .edit-form__row-double
+          .edit-form__row: vc-input(
+            type="text"
+            name="author"
+            title="Имя автора"
+            placeholder="Ковальчук Дмитрий"
+            v-model="newReview.author"
+            :errorText="validation.firstError('newReview.author')")
+          .edit-form__row: vc-input(
+            type="text"
+            name="occ"
+            title="Титул автора"
+            placeholder="Основатель LoftSchool"
+            v-model="newReview.occ"
+            :errorText="validation.firstError('newReview.occ')")
+        .edit-form__row: vc-input(
+          type="textarea"
+          name="text"
+          title="Отзыв"
+          placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!"
+          v-model="newReview.text"
+          :errorText="validation.firstError('newReview.text')")
+        .edit-form__row
+          .controls.edit-form__btns
+            .controls__btn: button(type="reset").btn.btn--link Отмена
+            .controls__btn: button(type="submit" :class="{ 'is-blocked': isBlocked }").btn.btn--gradient Сохранить

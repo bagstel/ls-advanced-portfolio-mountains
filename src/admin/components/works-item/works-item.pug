@@ -1,0 +1,19 @@
+.card.card--works
+  .card__header
+    figure.works__figure
+      img(:src="workPhoto(work.photo)" style="object-fit: cover; object-position: center")
+      figcaption.works__figcaption
+        vc-tags(:techs="work.techs")
+  .card__content
+    .works__row
+      h3.page-subtitle {{ work.title}}
+    .works__row
+      p {{ work.description }}
+    .works__row
+      a(:href="work.link").btn.btn--link {{ work.link }}
+  .card__footer
+    .controls
+      .controls__btn
+        button(type="button" @click="editWork").btn.btn--edit Править
+      .controls__btn
+        button(type="button" @click="deleteTheWork(work.id)").btn.btn--cross Удалить

@@ -1,3 +1,4 @@
-.tooltip(:class="'tooltip--' + tooltip.status")
-  .tooltip__text {{ tooltip.message }}
-  button(@click="hideTooltip").tooltip__close
+.tooltip-container(:class="{ showed: showed }")
+  .tooltip(:class="'tooltip--' + type")
+    .tooltip__text {{ message }}
+    button(@click="closeTooltip").tooltip__close

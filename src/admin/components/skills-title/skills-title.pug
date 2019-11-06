@@ -1,0 +1,19 @@
+form(@submit="skillsGroupTitle" @keyup.esc="editMode = false").card__header
+  .card__column(v-if="editMode")
+    vc-input(
+      :autofocus="true"
+      type="text"
+      placeholder="Название новой группы"
+      v-model="newTitle"
+      :errorText="validation.firstError('newTitle')")
+  .card__column(v-else)
+    .page-subtitle {{ category.category }}
+  .card__column
+    .controls(v-if="editMode")
+      .controls__btn
+        button(type='submit').btn.btn-icon--check
+      .controls__btn
+        button(type='button' @click="deleteSkillGroup").btn.btn-icon--cancel
+    .controls(v-else)
+      .controls__btn
+        button(type='button' @click="editMode = true").btn.btn-icon--edit

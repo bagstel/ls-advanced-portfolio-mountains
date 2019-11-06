@@ -1,0 +1,14 @@
+.card
+  vc-skills-title(:category="category")
+  .card__content
+    ul.skills
+      li(v-for="skill in category.skills" :key="skill.id")
+        vc-skills-item(:skill="skill")
+  .card__footer
+    form(@submit.prevent="addNewSkill" :class="{ 'is-blocked': formBlocked }").add-new-skill
+      .add-new-skill__cell
+        vc-input(type="text" name="title" placeholder='Новый навык' v-model="skill.title")
+      .add-new-skill__cell
+        vc-input(type="number" name="percent" v-model="skill.percent")
+      .add-new-skill__cell
+        button(type="submit").btn.btn--add.btn--big

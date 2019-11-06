@@ -1,7 +1,10 @@
 import Vue from 'vue';
-import router from './router/index.js';
+import axios from './requests';
+import router from './router';
 import store from './store';
 import App from './App.vue';
+
+store.$axios = axios;
 
 new Vue({
   el: '#app-root',

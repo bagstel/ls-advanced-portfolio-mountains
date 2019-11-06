@@ -16,7 +16,7 @@ export default {
       activeLink: '#home',
       links: [
         {href: '#home', text: 'Главная'},
-        {href: '#about', text: 'Обо мне'},
+        {href: '#skills', text: 'Обо мне'},
         {href: '#skills', text: 'Навыки'},
         {href: '#works', text: 'Работы'},
         {href: '#reviews', text: 'Отзывы'},

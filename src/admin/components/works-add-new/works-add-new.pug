@@ -1,0 +1,65 @@
+.card
+  .card__header
+    .card__column
+      .page-subtitle Редактирование работы
+  .card__content
+    form(@submit.prevent="workCard(newWork)" @reset.prevent="hideAddingCard").edit-form.form--strong
+      .edit-form__column
+        input(
+          type="file"
+          name="work-image"
+          @change="appendFileAndRenderPhoto")#upload-pic.edit-form__file
+        .edit-form__row(v-if="renderedPhoto")
+          .edit-form__frame
+            img(:src="renderedPhoto")
+        .edit-form__row(v-if="renderedPhoto")
+          .edit-form__button
+            button(type="button").btn
+              label(for="upload-pic").btn.btn--link Изменить превью
+        .edit-form__row(v-else)
+          .edit-form__frame
+            .edit-form__info Перетащите или загрузите для загрузки изображения
+            .edit-form__button
+              label(for="upload-pic").btn.btn--gradient ЗАГРУЗИТЬ
+        vc-tooltip-input(:errorText="validation.firstError('newWork.photo')")
+      .edit-form__column
+        .edit-form__row
+          vc-input(
+            type="text"
+            title="Название"
+            name="title"
+            v-model="newWork.title"
+            :errorText="validation.firstError('newWork.title')"
+            placeholder="Дизайн сайта для авто салона Porsche")
+        .edit-form__row
+          vc-input(
+            type="url"
+            title="Ссылка"
+            name="link"
+            v-model="newWork.link"
+            :errorText="validation.firstError('newWork.link')"
+            placeholder="https://www.porsche-pulkovo.ru")
+        .edit-form__row
+          vc-input(
+            type="textarea"
+            title="Описание"
+            name="description"
+            v-model="newWork.description"
+            :errorText="validation.firstError('newWork.description')"
+            palceholder="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей")
+        .edit-form__row
+          vc-input(
+            type="text"
+            title="Добавление тэга"
+            name="techs"
+            v-model="newWork.techs"
+            :errorText="validation.firstError('newWork.techs')"
+            placeholder="Jquery, Vue.js, HTML5")
+        .edit-form__row
+          vc-tags(:techs="newWork.techs" :tagButton="true" @updateTag="updateTag")
+        .edit-form__row
+          .controls.edit-form__btns
+            .controls__btn
+              button(type="reset").btn.btn--link Отмена
+            .controls__btn
+              button(type="submit" :class="{ 'is-blocked': isBlocked }" :disabled="isBlocked").btn.btn--gradient Сохранить

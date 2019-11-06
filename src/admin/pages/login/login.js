@@ -1,14 +1,12 @@
 import $axios from '@/requests/';
-import { Validator } from "simple-vue-validator";
+import simpleVueValidator from 'simple-vue-validator';
+
+const { Validator } = simpleVueValidator;
+import { mapActions} from 'vuex';
 
 export default {
-  mixins: [require("simple-vue-validator").mixin],
+  mixins: [simpleVueValidator.mixin],
   data: () => ({
-    tooltip: {
-      showed: false,
-      message: 'Авторизация прошла успешно',
-      status: 'success'
-    },
     user: {
       name: '',
       password: ''
@@ -22,13 +20,13 @@ export default {
     'user.name': function (value) {
       return Validator.value(value).required().minLength(6);
     },
-
     'user.password': function (value) {
       return Validator.value(value).required().minLength(6);
     }
   },
   methods: {
-    submit: async function (event) {
+    ...mapActions('tooltip', ['showTooltip']),
+    submit: async function () {
       if (await this.$validate()) {
         try {
           const { data: { token } } = await $axios.post('/login', this.user);
@@ -37,7 +35,7 @@ export default {
           $axios.defaults.headers['Authorization'] = `Bearer ${ token }`;
           await this.$router.replace('/');
         } catch ({ message }) {
-          this.tooltip = { showed: true, message, status: 'error' };
+          this.showTooltip( { message, type: 'error' });
         }
       }
     }

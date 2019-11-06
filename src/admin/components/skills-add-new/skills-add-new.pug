@@ -1,0 +1,16 @@
+form(@submit.prevent="addNewSkill" :class="{ 'is-blocked': formBlocked }").add-new-skill
+  .add-new-skill__cell
+    vc-input(
+      type="text"
+      name="title"
+      placeholder='Новый навык'
+      v-model="skill.title"
+      :errorText="validation.firstError('skill.title')")
+  .add-new-skill__cell
+    vc-input(
+      type="number"
+      name="percent"
+      v-model="skill.percent"
+      :errorText="validation.firstError('skill.percent')")
+  .add-new-skill__cell
+    button(type="submit").btn.btn--add.btn--big

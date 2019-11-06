@@ -26,6 +26,7 @@
   }
 
   &:disabled {
+    cursor: unset;
     &:before {
       background-image: svg-load('arrow-down.svg', fill=rgba(#fff, .3), width=100%, height=100%);
     }
@@ -62,6 +63,7 @@
 
   &:disabled {
     border-color: rgba(currentColor, .9);
+    cursor: unset;
 
     &:before {
       background-image: svg-load('arrow-down.svg', fill=rgba(currentColor, .9), width=100%, height=100%);
