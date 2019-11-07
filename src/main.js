@@ -6,7 +6,8 @@ if (process.env.NODE_ENV === 'development') {
   require('file-loader!./index.pug');
 }
 
-import './scripts/header';
+import './scripts/popup-menu';
+// import './scripts/header';
 import './scripts/parallax';
 
 // Menu
@@ -22,6 +23,13 @@ new Vue({
 
 new Vue({
   el: '.footer__navigation',
+  components: {
+    vcMenu: Menu
+  }
+});
+
+new Vue({
+  el: '.popup-menu',
   components: {
     vcMenu: Menu
   }

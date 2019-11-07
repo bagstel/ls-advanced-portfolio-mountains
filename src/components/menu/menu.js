@@ -26,6 +26,8 @@ export default {
   },
   methods: {
     onStart(elem) {
+      const bodyTag = document.querySelector('body');
+      bodyTag.classList.remove('overlay');
       // EventBus.$emit('hash', `#${elem.getAttribute('id')}`);
     },
     onScroll() {

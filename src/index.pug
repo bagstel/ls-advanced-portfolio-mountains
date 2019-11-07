@@ -24,7 +24,7 @@ html(lang="ru")
           .header__logo: .logo ва
           .header__menu: vc-menu(modifier="header")
           .header__socials_and_burger
-            .header__socials: +socials
+            .header__socials: +socials("header")
             .header__burger: +burger
       <!--================ Welcome area =================-->
       .welcome#home
@@ -66,8 +66,6 @@ html(lang="ru")
               .works__tags
                 vc-tags
               vc-work
-
-
       <!--================ Triangles =================-->
       +triangles("buddha")
       <!--================ Testimonial =================-->
@@ -117,5 +115,10 @@ html(lang="ru")
                   .footer-quote__content
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer-quote__author Martin Golding
-
       include ./components/entry
+    <!--================ Popup menu =================-->
+    .popup-menu
+      .popup-menu__sidebar
+        .popup-menu__container
+          vc-menu(modifier="popup")
+          +socials('popup')

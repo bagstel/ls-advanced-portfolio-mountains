@@ -1,0 +1,50 @@
+.popup-menu {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  background-image: url('~images/bg/popup-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  z-index: 9;
+  transition: right .3s ease-in;
+  @include phones {
+    background: none;
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    height: 100vh;
+    width: 320px;
+    background-color: #fff;
+    transition: right .3s ease-in .3s;
+    @include phones {
+      width: 100vw;
+    }
+  }
+
+  &__container {
+  }
+}
+
+.overlay {
+  @include tablets {
+    overflow: hidden;
+
+    .popup-menu {
+      right: 0;
+
+      &__sidebar {
+        right: 0;
+      }
+    }
+  }
+}
