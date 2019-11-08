@@ -11,4 +11,4 @@ header.header
             .user__row.user__name Владимир Астаханов
         .header__title Панель администрирования
       .header__btn
-        router-link(to="/" class="btn--exit") Выйти
+        button(type="button" @click="logoutTheUser").btn--exit Выйти
