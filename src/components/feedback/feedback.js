@@ -29,7 +29,11 @@ export default {
     submit () {
       this.$validate()
         .then(status => {
-          EventBus.$emit('validateEvent', { showed: true });
+          if (status) {
+            EventBus.$emit('validateEvent', { showed: true });
+            this.name = this.email = this.message = '';
+            this.validation.reset();
+          }
         });
     }
   }

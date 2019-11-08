@@ -20,13 +20,15 @@ export default {
     });
   },
   watch: {
-    showed (value) {
+    "tooltip.showed" (value) {
       if (value) {
         let timeout;
 
         clearTimeout(timeout);
 
-        timeout = setTimeout(() => this.showed = false, 3000);
+        timeout = setTimeout(() => {
+          this.closeTooltip();
+        }, 3000);
       }
     }
   }
