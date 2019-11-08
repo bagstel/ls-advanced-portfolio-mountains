@@ -1,0 +1,32 @@
+script(type="text/x-template")#feedback-template
+  form(@submit.prevent="submit").feedback__form
+    .feedback__double-block-wrapper
+      .feedback__single-wrapper
+        vc-input(
+          type="text"
+          name="name"
+          title="Введите ваше имя"
+          icon="user"
+          :errorText="validation.firstError('name')"
+          v-model="name"
+          placeholder="Ковальчук Дмитрий")
+      .feedback__single-wrapper
+        vc-input(
+          type="email"
+          name="email"
+          title="Введите ваш email"
+          icon="envelope"
+          :errorText="validation.firstError('email')"
+          v-model="email"
+          placeholder="loftschool@study.com")
+    .feedback__single-wrapper
+      vc-input(
+        type="textarea"
+        name="message"
+        title="Сообщение к письму"
+        icon="message"
+        :errorText="validation.firstError('message')"
+        v-model="message"
+        placeholder="Требуется ваша помощь в создании сайта.\n Интересуют сроки и цена вопроса")
+    .feedback__button
+      button(type="submit").btn.btn--feedback Отправить

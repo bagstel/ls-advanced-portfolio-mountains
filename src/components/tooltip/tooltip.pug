@@ -1,0 +1,5 @@
+script(type="text/x-template")#tooltip-template
+  .tooltip-container(:class="{ showed: tooltip.showed }")
+    .tooltip(:class="'tooltip--' + tooltip.type")
+      .tooltip__text {{ tooltip.message }}
+      button(@click="closeTooltip").tooltip__close

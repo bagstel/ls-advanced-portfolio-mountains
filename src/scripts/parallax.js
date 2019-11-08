@@ -1,5 +1,3 @@
-
-
 (function parallax() {
   let parallax = document.querySelectorAll('.parallax');
   let windowWidth = null;
