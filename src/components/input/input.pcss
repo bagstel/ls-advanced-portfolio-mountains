@@ -1,0 +1,75 @@
+.input {
+  position: relative;
+
+  &__label {
+    display: block;
+    color: rgba($links-color, .3);
+    font-weight: 600;
+    line-height: 36px;
+    cursor: pointer;
+  }
+
+  &__element {
+    background: transparent;
+    border: 0;
+    color: $links-color;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+    border-bottom: 2px solid $links-color;
+    cursor: pointer;
+
+    &:focus {
+      cursor: initial;
+    }
+
+    &--strong {
+      font-size: 18px;
+      font-weight: 600;
+
+      &::placeholder {
+        color: inherit;
+        font-weight: inherit;
+      }
+    }
+  }
+
+  &--iconed {
+    .input__label {
+      margin-left: 45px;
+    }
+
+    .input__element {
+      padding-left: 45px;
+      background: left 5px / auto 29px no-repeat;
+    }
+  }
+
+  &__icon {
+    @each $icon in (user, envelope, message) {
+      &--$(icon) {
+        .input__element {
+          background-image: svg-load("$(icon).svg", fill=#cfd2d7);
+
+          &:focus:not(.input__element--error) {
+            border-bottom-color: $links-active;
+            background-image: svg-load("$(icon).svg", fill=$links-active);
+          }
+
+          &--error {
+            border-bottom-color: $errors-color;
+            background-image: svg-load("$(icon).svg", fill=$errors-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+textarea.input {
+  &__element {
+    height: 146px;
+    resize: none;
+  }
+}

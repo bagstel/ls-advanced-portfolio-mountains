@@ -87,17 +87,7 @@ html(lang="ru")
         section.feedback#feedback
           .container.feedback__container
             h2.title.feedback__title Связаться со мной
-            form.feedback__form
-              .feedback__double-block-wrapper
-                .feedback__single-wrapper
-                  +input-block('feedback', 'Введите ваше имя', 'user', 'text', 'name', 'Ковальчук Дмитрий')
-                .feedback__single-wrapper
-                  +input-block('feedback', 'Введите ваш email', 'envelope', 'email', 'email', 'loftschool@study.com')
-              .feedback__single-wrapper
-                +textarea-block('feedback', 'Сообщение к письму', 'message', 'message', 'Требуется ваша помощь в создании сайта.\n' +
-                'Интересуют сроки и цена вопроса')
-              .feedback__button
-                +button('feedback', 'submit', 'Отправить')
+            vc-feedback
       <!--================ Footer section =================-->
       footer.footer
         .container.footer__container
@@ -115,10 +105,13 @@ html(lang="ru")
                   .footer-quote__content
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer-quote__author Martin Golding
-      include ./components/entry
+      #tooltip
+        vc-tooltip(:tooltip="tooltip")
     <!--================ Popup menu =================-->
     .popup-menu
       .popup-menu__sidebar
         .popup-menu__container
           vc-menu(modifier="popup")
           +socials('popup')
+
+    include ./components/entry

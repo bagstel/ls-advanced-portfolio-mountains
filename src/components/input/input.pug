@@ -1,0 +1,27 @@
+.input(v-if="type === 'textarea'" :class="iconClass")
+  label(v-if="title" :for="'input__' + name").input__label {{ title }}
+  .input__wrapper
+    textarea(
+      :name="name"
+      :class="{ 'input__element--error': errorText, 'textarea__element--strong': strong }"
+      :id="'input__' + name"
+      :placeholder="placeholder"
+      :value="value"
+      @input="$emit('input', $event.target.value)").input__element
+  vc-tooltip-input(:errorText="errorText")
+
+.input(v-else :class="iconClass")
+  label(v-if="title" :for="'input__' + name").input__label {{ title }}
+  .input__wrapper
+    input(
+      autocomplete="off"
+      :autofocus="autofocus"
+      :type="type"
+      :name="name"
+      :id="'input__' + name"
+      :class="{ 'input__element--error': errorText, 'input__element--strong': strong }"
+      :placeholder="placeholder"
+      :value="value"
+      @input="$emit('input', $event.target.value)").input__element
+
+  vc-tooltip-input(:errorText="errorText")

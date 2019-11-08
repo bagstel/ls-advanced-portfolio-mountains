@@ -1,5 +1,5 @@
 export default {
-  name: 'input-filed',
+  name: 'input-field',
   props: {
     strong: Boolean,
     name: String,
@@ -13,7 +13,7 @@ export default {
     icon: {
       type: String,
       default: '',
-      validator: value => ['', 'user', 'key'].includes(value)
+      validator: value => ['', 'user', 'envelope', 'message'].includes(value)
     },
     placeholder: {
       type: String,

@@ -91,3 +91,25 @@ new Vue({
     vcSkills: Skills
   }
 });
+
+// Feedback
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import Feedback from './components/feedback/feedback';
+
+new Vue({
+  el: '#feedback',
+  components: {
+    vcFeedback: Feedback
+  }
+});
+
+// Tooltip
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import Tooltip from './components/tooltip/tooltip';
+
+new Vue({
+  el: '#tooltip',
+  components: {
+    vcTooltip: Tooltip
+  }
+});
