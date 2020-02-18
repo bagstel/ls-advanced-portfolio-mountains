@@ -10,7 +10,7 @@ npm run build
 cd dist
 
 ## if you are deploying to a custom domain
-echo 'ls-advanced-portfolio-mountains.psd-to.site' > CNAME
+echo 'ls-advanced-portfolio.psd-to.site' > CNAME
 
 git init
 git add -A
