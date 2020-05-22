@@ -32,5 +32,13 @@ export default [
     meta: {
       public: true
     }
+  },
+  {
+    path: '*',
+    components: {
+      default: () => import('../pages/404.vue'),
+      header: Header,
+      tabs: Tabs
+    }
   }
 ];

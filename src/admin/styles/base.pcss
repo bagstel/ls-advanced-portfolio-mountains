@@ -59,38 +59,47 @@ img {
 }
 
 .root-wrapper {
+  background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
+  min-height: 100vh;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .9);
+  }
+
+  &--dark {
+    padding: 0;
+
+    &:before {
+      background-color: rgba(#2d3c4e, .9);
+    }
+  }
+}
+
+.page__wrapper,
+.header, 
+.tabs {
   position: relative;
 }
 
 .page {
   &__wrapper {
-    background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
-    position: relative;
-    min-height: 100vh;
     padding: 60px 0;
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(255, 255, 255, .9);
-    }
-
-    &--dark {
+    &--no-gutters {
       padding: 0;
-
-      &:before {
-        background-color: rgba(#2d3c4e, .9);
-      }
     }
   }
 
   &__container {
     position: relative;
-    max-width: 92.5rem;
+    max-width: 1080px;
     width: 95%;
     margin: 0 auto;
   }

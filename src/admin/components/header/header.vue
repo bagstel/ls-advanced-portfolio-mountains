@@ -8,6 +8,7 @@
       ...mapActions('user', ['logoutUser']),
       async logoutTheUser () {
         await this.logoutUser();
+        localStorage.removeItem('token');
         await this.$router.push('/login')
       }
     }

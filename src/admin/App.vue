@@ -1,8 +1,8 @@
 <template lang="pug">
-  .root-wrapper
+  .root-wrapper(:class="{ 'root-wrapper--dark': $route.path === '/login' }")
     router-view(name="header")
     router-view(name="tabs")
-    .page__wrapper(:class="{ 'page__wrapper--dark': $route.path === '/login' }")
+    .page__wrapper(:class="{ 'page__wrapper--no-gutters': $route.path === '/login' }")
       router-view
     vc-tooltip()
 </template>
