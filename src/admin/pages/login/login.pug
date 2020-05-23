@@ -10,7 +10,8 @@ section.login
           icon="user"
           v-model="user.name"
           :errorText="validation.firstError('user.name')"
-          :autofocus="true")
+          :autofocus="true"
+        )
       .login__row
         vc-input(
           :strong="true"
@@ -19,7 +20,8 @@ section.login
           icon="key"
           type="password"
           v-model="user.password"
-          :errorText="validation.firstError('user.password')")
+          :errorText="validation.firstError('user.password')"
+        )
       .login__row
         .login__btn
           button(type="submit").btn.btn--feedback Отправить

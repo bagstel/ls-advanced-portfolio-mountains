@@ -1,0 +1,41 @@
+.user {
+  display: flex;
+  align-items: center;
+
+  &__column:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__row:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    @include tablets {
+      font-size: 16px;
+    }
+  }
+
+  &__occ {
+    color: rgba($text-color, .3);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    @include tablets {
+      font-size: 14px;
+    }
+  }
+}
+
+.user--admin-header {
+  .user__name {
+    color: #fff;
+  }
+
+  .user__column:not(:last-child) {
+    margin-right: 20px;
+  }
+}
